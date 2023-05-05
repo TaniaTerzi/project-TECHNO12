@@ -20,3 +20,4 @@ function renderSupportMarkup() {
     sliderRefs.sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
 };
 
+export { renderSupportMarkup }
