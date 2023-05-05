@@ -1,0 +1,18 @@
+:root {
+  --bg-color: #F6F6F6;
+	--header-color: #ffffff;
+  --text-color: #111111;
+	--slider-color: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --second-text-color: #11111199;
+  --blue-color: #4f2ee8;
+  --yellow-color: #eac645;
+}
+
+.dark-mode {
+  --bg-color: #202024;
+	--header-color: #111111;
+  --text-color: #ffffff;
+  --second-text-color: #ffffff99;
+	--slider-color: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+}
+
