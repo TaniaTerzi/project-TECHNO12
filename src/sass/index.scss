@@ -1,11 +1,13 @@
 @import './common';
 @import './root';
-@import './header';
-
+@import './header/header-global.scss';
+@import './header/header-mobile.scss';
+@import './header/header-tablet.scss';
+@import './header/header-desc.scss';
 
 body {
-	 margin: 0 auto;
-	 max-width: 1440px;
+  margin: 0 auto;
+  max-width: 1440px;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
