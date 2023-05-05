@@ -1,0 +1,14 @@
+body{
+    background-color:  #4F2EE8;;
+}
+
+.modal-content{
+    position: absolute;
+    background-color: black;
+    padding: 20px;
+}
+
+.container{
+    display:grid;
+
+}
