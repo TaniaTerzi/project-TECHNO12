@@ -1,6 +1,10 @@
 @import './common';
 @import './root';
 
+@import './header';
+@import './shoppinglist.scss';
+
+
 @import './header/header-global.scss';
 @import './header/header-mobile.scss';
 @import './header/header-tablet.scss';
