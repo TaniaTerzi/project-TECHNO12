@@ -1,5 +1,5 @@
 import { supportList } from "./support-list"
-import Swiper from 'swiper'
+// import Swiper from 'swiper'
 
 sliderRefs = {
     sliderWrapper: document.querySelector('.swiper-wrapper'),
