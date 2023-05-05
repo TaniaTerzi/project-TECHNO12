@@ -1,2 +1,0 @@
-const e=document.querySelector(".slider");e.addEventListener("click",(()=>{e.classList.toggle("active")}));let o,t;document.querySelector(".slider").addEventListener("click",(()=>{document.body.classList.toggle("dark-mode"),document.querySelector(".container-header").classList.toggle("dark-mode")}));function c(){o>0?(window.scrollTo(0,o),o-=50,t=setTimeout(c,20)):(clearTimeout(t),window.scrollTo(0,0))}document.querySelector(".scroll-up-button").addEventListener("click",(()=>{o=window.pageYOffset,window.scrollTo(0,0),c()}));
-//# sourceMappingURL=index.e8426cf2.js.map
