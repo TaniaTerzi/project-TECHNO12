@@ -9,7 +9,7 @@ const sliderWrapper = document.querySelector('.swiper-wrapper');
 // renderSupportMarkup();
 function renderSupportMarkup() {
     let supportListId = 0;
-    supportMarcup = supportList.map(({ title, url, img }) => {
+    const supportMarcup = supportList.map(({ title, url, img }) => {
         supportListId += 1
         return `
             <div class="swiper-slide">
