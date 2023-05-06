@@ -15,6 +15,12 @@
   padding: 24px 40px;
 }
 
+.support-heading-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .support-slider-heading {
   color: #ffffff;
   width: 205px;
@@ -26,6 +32,7 @@
 
 .swiper-wrapper {
   padding-top: 40px;
+  height: 330px;
 }
 
 .support-link {
@@ -49,4 +56,9 @@
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+}
+
+.support-img {
+  display: inline-block;
+  height: 32px;
 }
