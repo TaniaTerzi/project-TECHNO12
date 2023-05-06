@@ -6,7 +6,7 @@ import { supportList } from "./support-list"
 const sliderWrapper = document.querySelector('.swiper-wrapper');
 
 
-renderSupportMarkup();
+// renderSupportMarkup();
 function renderSupportMarkup() {
     let supportListId = 0;
     supportMarcup = supportList.map(({ title, url, img }) => {
@@ -20,7 +20,7 @@ function renderSupportMarkup() {
     console.log(supportMarcup);
     sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
 };
-
+renderSupportMarkup();
 
 
 
