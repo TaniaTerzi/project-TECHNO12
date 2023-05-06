@@ -1,4 +1,4 @@
-const supportList = [
+export const supportList = [
   {
     title: 'Save the Children',
     url:

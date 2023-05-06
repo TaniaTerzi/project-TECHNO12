@@ -1,3 +1,5 @@
+
+@media screen and (min-width: 1199px){
 .header-logo {
   display: flex;
   align-items: center;
@@ -14,8 +16,9 @@
   background-color: var(--header-color);
   max-width: 1440px;
   height: 72px;
-  padding-left: 24px;
-  padding-right: 24px;
+padding-left: 24px;
+padding-right: 24px;
+margin-bottom: 40px;
   display: flex;
   align-items: center;
   border: 1.5px solid #111111;
@@ -90,4 +93,5 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   color: #ffffff;
+}
 }

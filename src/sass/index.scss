@@ -1,7 +1,8 @@
 @import './common';
 @import './root';
 
-// @import './header';
+@import "./global";
+
 @import './shoppinglist.scss';
 
 
@@ -11,10 +12,6 @@
 @import './header/header-desc.scss';
 
 @import './scroll-up';
+@import './support-slider-style/slider-general.scss';
 
-body {
-  margin: 0 auto;
-  max-width: 1440px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
+@import './all-categories/categories.scss';
