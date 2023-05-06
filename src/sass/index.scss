@@ -12,6 +12,8 @@
 @import './scroll-up';
 @import './support-slider-style/support-slider-general.scss';
 
+@import './_booksRendering';
+
 body {
   margin: 0 auto;
   max-width: 1440px;
