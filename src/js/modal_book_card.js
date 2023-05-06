@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const modal = document.querySelector('.modal');
 console.log(modal)
 const getbook = document.querySelector('.getbook');
@@ -77,4 +79,6 @@ function booksCard(book) {
     </ul>
     </div>`;
     return modal.insertAdjacentHTML('afterbegin', markup);
-}
+};
+
+export { booksCard }
