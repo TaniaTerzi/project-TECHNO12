@@ -1,9 +1,9 @@
 
 .conteiner-shopping_list {
-    // background-color: var(--bg-shoppinglist);
+    background-color: var(--bg-shoppinglist);
     display: flex;
-    flex-direction: column;
     gap:40px;
+		padding: 40px 24px;
 }
 .shopping{
     font-size: 48px;
