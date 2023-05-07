@@ -7,7 +7,7 @@ const mainTitle = document.querySelector('.main__title-js');
 
 let idBook = 0;
 let title = '';
-allCategoriesBtn.classList.add('active-categories');
+allCategoriesBtn.classList.add('active-category');
 listEl.addEventListener('click', markup);
 
 const createCategoryList = async () => {
@@ -16,7 +16,7 @@ const createCategoryList = async () => {
     const makeNewButtons = categoriesList
       .map(
         category =>
-          `<li class= 'categories-list__item '> ${category.list_name}</li>`
+          `<li class= 'categories-list__item '> <button class= 'categories-list__button'>${category.list_name}</button> </li>`
       )
       .join('');
     listEl.insertAdjacentHTML('beforeend', makeNewButtons);
@@ -37,7 +37,6 @@ const drawCategory = async nameOfCategory => {
   const titleArr = nameOfCategory.split(' ');
   const titleFirstPart = titleArr.slice(0, titleArr.length - 1).join(' ');
   const titleLastPart = titleArr.slice(titleArr.length - 1).join();
-  mainTitle.innerHTML = `${titleFirstPart}<span class="span-purple"> ${titleLastPart}</span>`;
 
   // !!!!!!!!!!!!!!!!!!!!Сюди вставити функцію створення категорії!!!!!!!!!!!!!!!!!!!!
 
@@ -66,13 +65,14 @@ function markup(ev) {
   }
   title = ev.target.textContent;
   drawCategory(title);
-  ev.target.classList.add('active-categories');
+  ev.target.classList.add('active-category');
 }
 
 const clearSelectedCategories = () => {
   for (let i = 0; i < listEl.children.length; i += 1) {
     const category = listEl.children[i];
-    category.firstElementChild.classList.remove('active-categories');
+
+    category.firstElementChild.classList.remove('active-category');
   }
 };
 
