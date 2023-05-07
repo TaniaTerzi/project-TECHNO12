@@ -1,4 +1,5 @@
 export const slider = document.querySelector('.slider');
+
 slider.addEventListener('click', () => {
   slider.classList.toggle('active');
 });

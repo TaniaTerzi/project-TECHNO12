@@ -5,7 +5,6 @@ import { supportList } from "./support-list"
 
 const sliderWrapper = document.querySelector('.swiper-wrapper');
 
-
 // renderSupportMarkup();
 function renderSupportMarkup() {
     let supportListId = 0;
