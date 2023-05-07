@@ -3,6 +3,8 @@
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
+margin-right: 76;
+
 }
 
 .logo-img {
@@ -91,3 +93,30 @@
   letter-spacing: -0.04em;
   color: #ffffff;
 }
+.unauthorized-header{
+	width: 184px;
+	border-radius: 18px;
+}
+
+.home-link {
+	width: 72px;
+background: var(--yellow-color);
+border-radius: 36px;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+padding: 8px 16px;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+
+color: #111111;
+margin-right: 24px;
+}
+
+
+		.shopping-list-link{
+			color: var(--text-color);
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;}

@@ -169,3 +169,6 @@ addEventListener('resize', () => {
     location.reload();
   }
 });
+
+
+export { renderingBooksCategories, renderingCategory };

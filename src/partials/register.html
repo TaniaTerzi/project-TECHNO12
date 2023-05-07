@@ -1,0 +1,50 @@
+
+    <button class="open-button" onclick="openForm()">Sign up</button>
+
+    <div class="form-popup" id="myForm">
+        
+        <form action="/action_page.php" class="form-register">
+            <button class="close-button" type="button" onclick="closeForm()">
+                <!-- <svg class="mobile-menu_close-icon" width="31" height="31">
+                    <use href="./images/svg/svg_sprite.svg#x-button_white"></use>
+                </svg> -->
+            </button>
+
+            
+
+            <label for="name"></label>
+           
+                <input class="input-forms" type="text" placeholder="NAME" name="email" required>
+            
+    
+            <label for="email"></label>
+            
+            <input class="input-forms" type="text" placeholder="EMAIL" name="email" required>
+           
+
+            <label for="psw"></label>
+         
+            <input class="input-forms" type="password" placeholder="PASSWORD" name="psw" required>
+          
+            
+
+            <button type="submit" class="btn-submit">SIGN UP</button>
+            
+            <div class="register-links">
+            <a class="signup-btn" href="">SING UP</a>
+            <a class="signin-btn" href="">SING IN</a>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
