@@ -1,6 +1,7 @@
 @import './common';
 @import './root';
 
+
 // @import './header';
 @import './registration.scss';
 @import './shoppinglist.scss';
@@ -15,14 +16,5 @@
 @import './support-slider-style/support-slider-general.scss';
 @import './modal_book_card.scss';
 @import './_booksRendering';
+@import './global';
 
-body {
-  margin: 0 auto;
-  max-width: 1440px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-.main{
-	display: flex;
-	padding: 40px 24px;
-}
