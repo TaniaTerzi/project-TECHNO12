@@ -1,6 +1,136 @@
+.header-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+margin-right: 76;
+
+}
+
+.logo-img {
+  width: 24px;
+  margin-right: 8px;
+}
+
+.container-header {
+  background-color: var(--header-color);
+  max-width: 1440px;
+  height: 72px;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #111111;
+  border-radius: 0px 0px 8px 8px;
+}
+
+.slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  margin-right: 24px;
+  border-radius: 15px;
+  background: var(--slider-color);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.thumb {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.knob {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #dadada 0%, #f0efef 62.92%, #ffffff 100%);
+}
+
+.central-knob {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+}
+
+.slider.active .thumb {
+  transform: translateX(20px);
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.sign-up-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 184px;
+  padding: 12px 14px;
+  text-decoration: none;
+  background: var(--blue-color);
+  border: 1.5px solid #111111;
+  border-radius: 18px;
+
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+.unauthorized-header{
+	width: 184px;
+	border-radius: 18px;
+}
+
+.home-link {
+// 	width: 72px;
+// background: var(--text-color);
+// border-radius: 36px;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+/* identical to box height, or 129% */
+// padding: 8px 16px;
+letter-spacing: -0.04em;
+text-transform: uppercase;
+
+color: #111111;
+margin-right: 24px;
+}
+
+
+
+		.shopping-list-link{
+      background: var(--yellow-color);
+    border-radius: 36px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+text-transform: uppercase;
+}
 
 .conteiner-shopping_list {
-    background-color: var(--bg-shoppinglist);
+
+    background-color: var(--bg-color);
+
+
     display: flex;
     gap:40px;
 		padding: 40px 24px;
@@ -11,7 +141,7 @@
     font-family: DM Sans;
     line-height: 1,08;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: -0.04em;
     }
     .shopping_span{
       font-size: 48px;
@@ -19,7 +149,7 @@
     font-family: DM Sans;
     line-height: 1,08;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: -0.04em;
     }
     .shopping-direction{
       margin: 0 auto;
@@ -28,6 +158,7 @@
       width:100%;
       gap:40px;
     }
+
 
 // ShendrykA from 32 to 161 lines
 .container-shopping-card {
