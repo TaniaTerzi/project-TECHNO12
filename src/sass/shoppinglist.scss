@@ -98,15 +98,11 @@ margin-right: 76;
 	border-radius: 18px;
 }
 
-.home-link {
-// 	width: 72px;
-// background: var(--text-color);
-// border-radius: 36px;
+.home-link-shopping {
 font-weight: 700;
 font-size: 14px;
 line-height: 18px;
 /* identical to box height, or 129% */
-// padding: 8px 16px;
 letter-spacing: -0.04em;
 text-transform: uppercase;
 
@@ -116,12 +112,14 @@ margin-right: 24px;
 
 
 
-		.shopping-list-link{
+		.shopping-link-order{
+
       background: var(--yellow-color);
     border-radius: 36px;
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
+    padding: 8px 16px;
     letter-spacing: -0.04em;
 text-transform: uppercase;
 }
@@ -129,7 +127,6 @@ text-transform: uppercase;
 .conteiner-shopping_list {
 
     background-color: var(--bg-color);
-
 
     display: flex;
     gap:40px;
