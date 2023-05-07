@@ -16,7 +16,12 @@ function renderSupportMarkup() {
             </div>
         `
     }).join('');
+<<<<<<< Updated upstream
     console.log(supportMarcup);
     sliderRefs.sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
+=======
+    // console.log(supportMarcup);
+    sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
+>>>>>>> Stashed changes
 };
 
