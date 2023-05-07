@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./sass/index.scss" />
 </head>
 <body>
-    <header dark-mode-header>
+    <!-- <header dark-mode-header>
         <div class="container-header">
           <a class="header-logo" href="#">
             <img
@@ -35,9 +35,14 @@
               </a>
           </div>
         </div>
-      </header>
-      
+      </header> -->
+     <include src="./partials/header.html" ></include>
+
+
     <div class="conteiner-shopping_list">
+      <div class="shopping-direction">
+      <include src="./partials/support-slider.html"></include>
+    </div>
         <h1 class="shopping">Shopping<span class="shopping_span">List</span>
             
                 <div class="conteiner shopping_card_book">
@@ -46,5 +51,6 @@
            
         </h1>
     </div>
+  </div>
 </body>
 </html>
