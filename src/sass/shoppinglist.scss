@@ -106,7 +106,7 @@ line-height: 18px;
 letter-spacing: -0.04em;
 text-transform: uppercase;
 
-color: #111111;
+color: var(--text-color);
 margin-right: 24px;
 }
 
@@ -115,6 +115,7 @@ margin-right: 24px;
 		.shopping-link-order{
 
       background: var(--yellow-color);
+			color: var(--text-color);
     border-radius: 36px;
     font-weight: 700;
     font-size: 14px;
@@ -134,7 +135,7 @@ text-transform: uppercase;
 }
 .shopping{
     font-size: 48px;
-    color: #111111;
+    color: var(--text-color);
     font-family: DM Sans;
     line-height: 1,08;
     font-weight: 700;
