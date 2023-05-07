@@ -1,4 +1,6 @@
+
 <header dark-mode-header>
+  <header>
   <div class="container-header">
     <a class="header-logo" href="#">
       <img
@@ -11,7 +13,21 @@
       <p>Bookshelf</p>
     </a>
 
+
+		<a class="home-link" href="/src/index.html"
+        >Home
+        </a>
+
+
+				<a class="shopping-list-link" href="./shoppinglist.html"
+        >shopping list<svg class="arrow-right" width="20" height="20">
+          <use href="/src/images/svg/shopping_bag.svg"></use></svg>
+        </a>
+
+
+
     <div class="right-header">
+      <!-- Перемикач теми -->
       <div class="slider">
         <span class="thumb">
           <span class="knob">
@@ -19,10 +35,14 @@
           </span>
         </span>
       </div>
-      <a class="sign-up-link" href="#"
+ <!-- Якщо користувач не авторизований  -->
+
+<div class="unauthorized-header">
+        <!-- <button class="login-button" onclick="openLoginModal()"> -->
+      <a class="sign-up-link" href="./partials/login-modal.html"
         >Sign up<svg class="arrow-right" width="20" height="20">
           <use href="#"></use></svg>
         </a>
     </div>
   </div>
-</header>
+</header> 
