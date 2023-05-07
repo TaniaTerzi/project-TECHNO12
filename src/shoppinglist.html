@@ -6,50 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping list</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-  </head>
-  <body>
-    <header dark-mode-header>
-      <div class="container-header">
-        <a class="header-logo" href="/src/index.html">
-          <img
-            class="logo-img"
-            src="../src/images/logo.png"
-            alt="logo"
-            width="25"
-            height="25"
-          />
-          <p>Bookshelf</p>
-        </a>
-        <a class="home-link" href="/src/index.html">Home </a>
 
-        <a class="shopping-list-link" href="./shoppinglist.html"
-          >shopping list<svg class="arrow-right" width="20" height="20">
-            <use href="/src/images/svg/shopping_bag.svg"></use>
-          </svg>
-        </a>
-        <div class="right-header">
-          <div class="slider">
-            <span class="thumb">
-              <span class="knob">
-                <span class="central-knob"> </span>
-              </span>
-            </span>
-          </div>
-          <a class="sign-up-link" href="#"
-            >Sign up<svg class="arrow-right" width="20" height="20">
-              <use href="#"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </header>
+</head>
+<body>
+     <include src="./partials/header.html" ></include>
+
 
     <div class="conteiner-shopping_list">
-      <h1 class="shopping">
-        Shopping<span class="shopping_span">List</span>
+      <div class="shopping-direction">
+      <include src="./partials/support-slider.html"></include>
+    </div>
+        <h1 class="shopping">Shopping<span class="shopping_span">List</span>
+            
+                <div class="conteiner shopping_card_book">
 
         <div class="conteiner shopping_card_book"></div>
       </h1>
     </div>
-  </body>
+  </div>
+</body>
 </html>
