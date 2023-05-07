@@ -5,7 +5,6 @@
 
 @import './shoppinglist.scss';
 
-
 @import './header/header-global.scss';
 @import './header/header-mobile.scss';
 @import './header/header-tablet.scss';
@@ -13,5 +12,9 @@
 
 @import './scroll-up';
 @import './support-slider-style/slider-general.scss';
+
+@import './support-slider-style/support-slider-general.scss';
+@import './modal_book_card.scss';
+@import './_booksRendering';
 
 @import './all-categories/categories.scss';
