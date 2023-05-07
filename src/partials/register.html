@@ -1,0 +1,32 @@
+<button class="open-button" onclick="openForm()">Open Form</button>
+
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+    <button class="close-button" aria-label="Close alert" type="button" class="btn cancel" onclick="closeForm()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <label for="email"><b></b></label>
+        <input type="text" placeholder="NAME" name="email" required>
+
+        <label for="email"><b></b></label>
+        <input type="text" placeholder="EMAIL" name="email" required>
+
+        <label for="psw"><b></b></label>
+        <input type="password" placeholder="PASSWORD" name="psw" required>
+
+        <button type="submit" class="btn">SIGN UP</button>
+
+        <a href="">SING UP</a>
+        <a href="">SING IN</a>
+         </form>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
