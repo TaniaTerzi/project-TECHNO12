@@ -30,4 +30,6 @@ class FetchBooks {
   }
 }
 
+
 export const fetchBooks = new FetchBooks();
+
