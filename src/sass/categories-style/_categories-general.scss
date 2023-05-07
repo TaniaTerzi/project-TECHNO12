@@ -1,0 +1,22 @@
+.categories-list {
+  list-style: none;
+}
+
+.categories-list__item {
+  text-decoration: none;
+}
+
+.categories-list__button {
+  border: none;
+  outline: none;
+}
+
+.active-category {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+
+  color: #4f2ee8;
+}

@@ -2,6 +2,7 @@ import { FetchBooks } from './fetchBooks';
 import Notiflix from 'notiflix';
 const fetchBooks = new FetchBooks();
 const listTopBooks = document.querySelector('.top-books');
+const galleryCategories = document.querySelector('.gallery-cat');
 
 let category = '';
 
@@ -37,11 +38,12 @@ async function renderingBooksCategories() {
     const bookItems = displayedBooks
       .map(
         book => `
-          <li class="item-category-book js-book-modal" data-book-id="${book._id}">
-            <a class="link-books-render" href="#">
+          <li class="item-category-book" data-book-id="${book._id}">
+            <a class="link-books-render" href="#" onclick="event.preventDefault()">
               <div class="card-book">
                 <div class="img-card-book">
                   <img src="${book.book_image}" alt="book" class="img-book">
+                  <p class="book-card overlay">Quick view</p>
                 </div>
                 <div class="box-text-book-best">
                   <div class="box-title">
@@ -95,11 +97,12 @@ async function handleLoadMore(e) {
       let markup = '';
       renderCategory.forEach(({ _id, book_image, title, author }) => {
         markup += `
-          <li class="item-category-book js-book-modal" data-book-id="${_id}">
-            <a class="link-books-render" href="#">
+          <li class="item-category-book" data-book-id="${_id}">
+            <a class="link-books-render" href="#" onclick="event.preventDefault()">
               <div class="card-book">
                 <div class="img-card-book">
                   <img src="${book_image}" alt="book" class="img-book">
+                  <p class="book-card overlay">Quick view</p>
                 </div>
                 <div class="box-text-book-category">
                   <div class="box-title">
@@ -121,6 +124,7 @@ async function handleLoadMore(e) {
         'beforebegin',
         `<h2 class="title-category">${category}</h2>`
       );
+      scrollToTitle();
 
       const titleLastWord = listTopBooks.previousElementSibling;
 
@@ -170,5 +174,8 @@ addEventListener('resize', () => {
   }
 });
 
+function scrollToTitle() {
+  listTopBooks.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
+}
 
 export { renderingBooksCategories, renderingCategory };

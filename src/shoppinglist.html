@@ -10,7 +10,46 @@
 </head>
 <body>
 
-     <include src="./partials/header.html" ></include>
+  <header dark-mode-header>
+    <div class="container-header">
+      <a class="header-logo" href="/src/index.html">
+        <img
+          class="logo-img"
+          src="../src/images/logo.png"
+          alt="logo"
+          width="25"
+          height="25"
+        />
+        <p>Bookshelf</p>
+      </a>
+      <a class="home-link-shopping" href="/src/index.html"
+      >Home
+      </a>
+
+
+      <a class="shopping-link-order" href="./shoppinglist.html"
+      >shopping list<svg class="arrow-right" width="20" height="20">
+        <use href="/src/images/svg/shopping_bag.svg"></use></svg>
+      </a>
+      
+      <div class="right-header">
+        <div class="slider">
+          <span class="thumb">
+            <span class="knob">
+              <span class="central-knob"> </span>
+            </span>
+          </span>
+        </div>
+        <a class="sign-up-link" href="/src/index.html"
+          >Sign up<svg class="arrow-right" width="20" height="20">
+            <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use></svg>
+          </a>
+      </div>
+    
+
+    
+    </div>
+
     <div class="conteiner-shopping_list">
       <div class="shopping-direction">
 
@@ -18,9 +57,10 @@
       
 
         <div class="sidebar">
+          <include src="./partials/categories.html"></include>
           <include src="./partials/support-slider.html"></include>
         </div>
-      <!-- <include src="./partials/support-slider.html"></include> -->
+     
 
     </div>
         <h1 class="shopping">Shopping<span class="shopping_span">List</span>
