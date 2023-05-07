@@ -1,7 +1,7 @@
 @import './common';
 @import './root';
+@import './global';
 
-// @import './header';
 @import './shoppinglist.scss';
 
 @import './header/header-global.scss';
@@ -14,9 +14,4 @@
 @import './modal_book_card.scss';
 @import './_booksRendering';
 
-body {
-  margin: 0 auto;
-  max-width: 1440px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
+
