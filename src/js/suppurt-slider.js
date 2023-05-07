@@ -17,6 +17,10 @@ function renderSupportMarkup() {
             </div>
         `
     }).join('');
+
+
+    // console.log(supportMarcup);
+
     sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
 };
 
