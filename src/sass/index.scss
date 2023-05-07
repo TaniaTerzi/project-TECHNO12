@@ -12,3 +12,15 @@
 
 @import './scroll-up';
 
+body {
+  margin: 0 auto;
+  max-width: 1440px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.main {
+	display: flex;
+	pading-top: 40px;
+	
+}
