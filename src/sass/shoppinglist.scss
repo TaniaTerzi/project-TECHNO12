@@ -158,3 +158,135 @@ text-transform: uppercase;
       width:100%;
       gap:40px;
     }
+
+
+// ShendrykA from 32 to 161 lines
+.container-shopping-card {
+  position: relative;
+  display: flex;
+  width: 996px;
+  height: 213px;
+  margin: 20 auto 0;
+  padding: 24px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+}
+
+.shopping-card-img {
+  min-width: 116px;
+  height: 165px;
+  margin-right: 24px;
+  border: solid 3px #4F2EE8;
+}
+
+.shopping-card-title {
+  margin: 0 0 4px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.shopping-card-list-name {
+  margin: 0 0 14px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: #B4AFAF;
+}
+
+.shopping-card-description {
+  margin: 0 0 24px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  color: var(--text-color);
+}
+
+.shopping-card-author {
+  margin: 0;
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+}
+
+.shopping-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.shopping-card-list {
+  display: flex;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.shopping-card-item {
+  list-style: none;
+}
+
+.shopping-card-pic {
+  filter: grayscale(1);
+}
+
+.shopping-card-item:not(:last-child) {
+  margin-right: 16px;
+}
+
+.shopping-card-dump-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  color: #4F2EE8;
+  // border: none;
+  border-radius: 50%;
+}
+
+.shopping-card-dump-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.container-shopping-empty {
+  width: 349px;
+  height: 309px;
+  margin: 140px auto;
+  border: solid 2px #4F2EE8;
+}
+
+.shopping-empty-text {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.shopping-empty-img {
+  width: 322px;
+  height: 241px;
+}    
