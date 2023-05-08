@@ -2,6 +2,7 @@ import { FetchBooks } from './fetchBooks';
 import Notiflix from 'notiflix';
 import AOS from 'aos';
 
+
 AOS.init({
   duration: 1200,
 });
