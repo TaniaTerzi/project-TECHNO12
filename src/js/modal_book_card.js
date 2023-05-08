@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const modal = document.querySelector('.modal');
+const modalMarkup = document.querySelector('.modal-markup');
 const addbook = document.querySelector('.addbook');
 const backdrop = document.getElementById('backdrop');
 
@@ -26,24 +27,19 @@ function onBookClick(event) {
 
 document.addEventListener('click', onBookClick);
 
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
+function closeModal(event) {
+  if (event.key === 'Escape' || event.target === backdrop) {
     modal.classList.add('hidden');
     backdrop.classList.remove('backdrop_open');
     document.addEventListener('click', onBookClick);
+    modalMarkup.innerHTML = '';
   }
-});
+}
+document.addEventListener('keydown', closeModal);
 
-document.addEventListener('click', (event) => {
-  if (event.target === backdrop) {
-    modal.classList.add('hidden');
-    backdrop.classList.remove('backdrop_open');
-    document.addEventListener('click', onBookClick);
-  }
-})
+document.addEventListener('click', closeModal);
 
-
-addbook.addEventListener('click', (e) => {
+addbook.addEventListener('click', () => {
   if (addbook.textContent === 'add to shoping list') {
     addbook.textContent = 'remove from the shopping list';
     addbook.style.width = '279px';
@@ -75,7 +71,7 @@ function booksCard(book) {
     <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[4].url}"><img src="./images/image3.png" width="38px" heigth="36px"/></a></li>    
     </ul>
     </div>`;
-  return modal.innerHTML = markup;
+  return modalMarkup.insertAdjacentHTML('afterbegin', markup)
 }
 
 export { booksCard }
