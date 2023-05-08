@@ -56,7 +56,7 @@ function markup(ev) {
   clearSelectedCategories();
 
   if (ev.target === allCategoriesBtn) {
-    allCategoriesBtn.classList.add('active-categories');
+    allCategoriesBtn.classList.add('active-category');
 
     // !!!!!!!!!!!!!!!!!!!!Сюди вставити функцію створення усіх категорій!!!!!!!!!!!!!!!!!!!!
     // showAllCategories();
