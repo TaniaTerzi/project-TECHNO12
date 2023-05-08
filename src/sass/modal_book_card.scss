@@ -44,12 +44,11 @@
     height: 46px;
     border-radius: 40px;
     border: 2px solid #4F2EE8;
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 1.28;
+    line-height: 1.28;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
     color: #111111;
     display: flex;
@@ -68,12 +67,11 @@
 
 .book-title {
     margin: 0 24px 4px 24px;
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    letter-spacing: 1.5;
+    letter-spacing: -0.04em;
 
     color: #111111;
 
@@ -81,23 +79,22 @@
 }
 
 .book-author {
-    font-family: 'DM Sans';
     font-style: italic;
     font-weight: 400;
     font-size: 12px;
+    font-size: 12px;
     line-height: 14px;
-    letter-spacing: 1.16;
+    letter-spacing: -0.04em;
     color: #B4AFAF;
     margin: 0 24px 18px 24px;
 }
 
 .book-descr {
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 1.28;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
     color: #111111;
     margin: 0 24px 14px 24px;
 }
