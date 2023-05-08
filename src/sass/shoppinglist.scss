@@ -110,55 +110,59 @@ color: var(--text-color);
 margin-right: 24px;
 }
 
-
-
-		.shopping-link-order{
-
-      background: var(--yellow-color);
-			color: var(--text-color);
-    border-radius: 36px;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 8px 16px;
-    letter-spacing: -0.04em;
-text-transform: uppercase;
+.shopping-link-order {
+  background: var(--yellow-color);
+  color: var(--text-color);
+  border-radius: 36px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 8px 16px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
-.conteiner-shopping_list {
-
-    background-color: var(--bg-color);
-
-    display: flex;
-    gap:40px;
-		padding: 40px 24px;
+.conteiner-shopping-list {
+  background-color: var(--bg-color);
+  display: flex;
+  padding: 40px 24px;
 }
-.shopping{
-    font-size: 48px;
-    color: var(--text-color);
-    font-family: DM Sans;
-    line-height: 1,08;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    }
-    .shopping_span{
-      font-size: 48px;
-    color: #4F2EE8;
-    font-family: DM Sans;
-    line-height: 1,08;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    }
-    .shopping-direction{
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      width:100%;
-      gap:40px;
-    }
+
+.shopping {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: var(--text-color);
+  font-family: DM Sans;
+  line-height: 1,08;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.shopping_span{
+  font-size: 48px;
+  color: var(--blue-color);
+  font-family: DM Sans;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+// .shopping-direction{
+//   // margin: 0 auto;
+//   // width: 100%;
+//   // display: flex;
+//   // flex-direction: column;
+//   // gap:40px;
+// }
 
 
 // ShendrykA from 32 to 161 lines
+
+.conteiner-shopping-books {
+  display: flex;
+  flex-direction: column;
+}
+
 .container-shopping-card {
   position: relative;
   display: flex;
@@ -174,7 +178,7 @@ text-transform: uppercase;
   min-width: 116px;
   height: 165px;
   margin-right: 24px;
-  border: solid 3px #4F2EE8;
+  border: solid 3px var(--blue-color);;
 }
 
 .shopping-card-title {
@@ -256,24 +260,25 @@ text-transform: uppercase;
   align-items: center;
   width: 34px;
   height: 34px;
-  color: #4F2EE8;
-  // border: none;
+  background-color: var(--blue-color);
   border-radius: 50%;
+  border: none;
 }
 
 .shopping-card-dump-icon {
-  width: 18px;
-  height: 18px;
+  width: 48px;
+  height: 48px;
 }
 
 .container-shopping-empty {
   width: 349px;
   height: 309px;
   margin: 140px auto;
-  border: solid 2px #4F2EE8;
+  border: solid 2px var(--blue-color);
 }
 
 .shopping-empty-text {
+  margin: 0 auto;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
@@ -285,6 +290,8 @@ text-transform: uppercase;
 }
 
 .shopping-empty-img {
+  display: block;
   width: 322px;
   height: 241px;
-}    
+  margin: 20 auto 0;
+}
