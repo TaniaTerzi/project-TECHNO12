@@ -1,8 +1,13 @@
 import { FetchBooks } from './fetchBooks';
 import Notiflix from 'notiflix';
+import AOS from 'aos';
+
+AOS.init({
+  duration: 1200,
+});
+
 const fetchBooks = new FetchBooks();
 const listTopBooks = document.querySelector('.top-books');
-const galleryCategories = document.querySelector('.gallery-cat');
 
 let category = '';
 
@@ -38,7 +43,7 @@ async function renderingBooksCategories() {
     const bookItems = displayedBooks
       .map(
         book => `
-          <li class="item-category-book" data-book-id="${book._id}">
+          <li class="item-category-book" data-aos="flip-left" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-book-id="${book._id}">
             <a class="link-books-render" href="#" onclick="event.preventDefault()">
               <div class="card-book">
                 <div class="img-card-book">
@@ -97,7 +102,7 @@ async function handleLoadMore(e) {
       let markup = '';
       renderCategory.forEach(({ _id, book_image, title, author }) => {
         markup += `
-          <li class="item-category-book" data-book-id="${_id}">
+          <li class="item-category-book" data-aos="flip-left" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-book-id="${_id}">
             <a class="link-books-render" href="#" onclick="event.preventDefault()">
               <div class="card-book">
                 <div class="img-card-book">
