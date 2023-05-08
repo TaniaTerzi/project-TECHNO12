@@ -11,4 +11,4 @@ function onShoppingList() {
 
 onShoppingList();
 
-// export { onShoppingList };
+export { onShoppingList };
