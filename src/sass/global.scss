@@ -30,3 +30,8 @@ body {
 	display: flex;
 	padding: 40px 24px;
 }
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
