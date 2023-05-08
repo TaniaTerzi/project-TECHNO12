@@ -1,12 +1,8 @@
 .modal {
-    width: 335px;
-    height: 762px;
     border-radius: 18px;
     border: 2px solid #111;
     background-color: #fff;
     margin: 10px auto 10px auto;
-    display: flex;
-    justify-content: center;
     position: relative;
     z-index: 1;
     transform: scale(1);
@@ -27,12 +23,6 @@
     background-color: rgba(0, 0, 0, 0.3);
     overflow-y: scroll;
     transition: all 300ms ease;
-}
-
-.getbook {
-    margin-bottom: 40px;
-    display: block;
-    margin: 10px auto 10px auto;
 }
 
 .addbook {
@@ -59,10 +49,7 @@
 }
 
 .book-img {
-    width: 287px;
-    height: 408px;
     border-radius: 8px;
-    margin: 40px 24px 14px 24px;
 }
 
 .book-title {
@@ -72,10 +59,7 @@
     font-size: 16px;
     line-height: 18px;
     letter-spacing: -0.04em;
-
     color: #111111;
-
-
 }
 
 .book-author {
@@ -146,4 +130,66 @@
 .hidden {
     opacity: 0;
     visibility: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .modal { 
+        width: 335px;
+        height: 762px;
+        display: flex;
+        justify-content: center;
+    }
+    .book-img {
+        width: 287px;
+        height: 408px;
+        margin: 40px 24px 14px 24px;
+    }
+        
+}
+
+@media screen and (min-width: 768px) {
+    .modal {
+        width: 579px;
+        height: 465px;
+    }
+    .book-img {
+        width: 192px;
+        height: 281px;
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+    .book-title {
+        margin: 40px 20px 8px 256px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .book-author {
+        font-size: 12px;
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 20px 20px 256px;
+    }
+    .book-descr {
+        font-size: 14px;
+        line-height: 18px;
+        margin: 0 20px 20px 256px;
+    }
+    .online-shops-list {
+        display: flex;
+        list-style: none;
+        width: 173px;
+        height: 36px;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0 20px 20px 256px;
+    }
+    .addbook {
+        left: 40px;
+        top: 361px;
+        width: 499px;
+        height: 64px;
+        font-size: 18px;
+        line-height: 24px;
+    }
 }

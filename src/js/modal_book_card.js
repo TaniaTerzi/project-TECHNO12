@@ -41,7 +41,8 @@ document.addEventListener('click', closeModal);
 
 addbook.addEventListener('click', () => {
   if (addbook.textContent === 'add to shoping list') {
-    addbook.textContent = 'remove from the shopping list';
+    setTimeout(() => { addbook.textContent = 'remove from the shopping list' }, 150);
+    // addbook.textContent = 'remove from the shopping list';
     addbook.style.width = '279px';
     addbook.style.left = '29px';
     modal.style.height = '806px';
@@ -58,6 +59,7 @@ addbook.addEventListener('click', () => {
     p.remove();
   }
 });
+
 
 function booksCard(book) {
   const markup = `<div class='book-card'>
