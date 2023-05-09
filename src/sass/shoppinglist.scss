@@ -1,3 +1,4 @@
+
 .header-logo {
   display: flex;
   align-items: center;
@@ -150,7 +151,7 @@ transition: background-color 0.5s ease;;
   margin-bottom: 20px;
   font-size: 48px;
   color: var(--text-color);
-  font-family: DM Sans;
+  font-family: "DMSans-Boldc";
   line-height: 1,08;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -159,19 +160,33 @@ transition: background-color 0.5s ease;;
 .shopping_span{
   font-size: 48px;
   color: var(--blue-color);
-  font-family: DM Sans;
+  font-family: "DMSans-Boldc";
   line-height: 1.08;
   font-weight: 700;
   letter-spacing: -0.04em;
 }
-
-// .shopping-direction{
-//   // margin: 0 auto;
-//   // width: 100%;
-//   // display: flex;
-//   // flex-direction: column;
-//   // gap:40px;
+// @media screen and (min-width: 480px) {
+  
 // }
+// @media screen and (max-width: 479px) {
+// 	.shopping-direction{
+// 		display: none;
+// 	}
+//  }
+
+  @media screen and (max-width: 479px) {
+   .shopping-direction{
+    display: none;
+   }
+     		
+    	}
+
+
+
+      
+
+// ShendrykA from 32 to 161 lines
+
 
 .conteiner-shopping-books {
   display: flex;
