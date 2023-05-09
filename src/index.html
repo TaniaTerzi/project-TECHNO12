@@ -6,16 +6,34 @@
     <link rel="icon" type="image/png" href="/src/images/favicon.ico" />
     <title>Bookshelf</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" /> -->
   </head>
   <body class="dark-mode-header">
-    <include src="./partials/register.html"></include>
-    <include src="./partials/header.html"></include>
-    <include src="./partials/support-slider.html"></include>
-    <include src="./partials/home-page-book.html"></include>
-    <include src="./partials/modal_book_card.html"></include>
-    <include src="./partials/scroll-up.html"></include>
 
+    <header>
+      <include src="./partials/register.html"></include>
+      <include src="./partials/header.html"></include>
+      <include src="./partials/burger-menu.html"></include>
+    </header>
+    
+
+
+    <div class="main">
+      <div class="sidebar">
+        <include src="./partials/categories.html"></include>
+        <include src="./partials/support-slider.html"></include>
+      </div>
+      <include src="./partials/home-page-book.html"></include>
+      <include src="./partials/modal_book_card.html"></include>
+    </div>
+    <include src="./partials/scroll-up.html"></include>
+		
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-  </body>
+    <script type="module" src="./index.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	</body>
 </html>

@@ -1,36 +1,48 @@
 import axios from 'axios';
 
 const modal = document.querySelector('.modal');
-console.log(modal)
-const getbook = document.querySelector('.getbook');
-console.log(getbook);
+const modalMarkup = document.querySelector('.modal-markup');
 const addbook = document.querySelector('.addbook');
 const backdrop = document.getElementById('backdrop');
 
+const getBooks = async (id) => {
+  try {
+    const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
+    console.log(response.data);
+    booksCard(response.data);
+    modal.classList.remove('hidden');
+    backdrop.classList.add('backdrop_open');
+    document.removeEventListener('click', onBookClick);
+  }
+  catch (error) {
+    console.log(error);      
+  }
+};
 
-getbook.addEventListener('click', () => {
-  modal.classList.remove('hidden');
-  backdrop.classList.add('backdrop_open');
-});
+function onBookClick(event) {
+  const bookCard = event.target;
+  const id = bookCard.parentNode.parentNode.parentNode.parentNode.getAttribute('data-book-id');
+  getBooks(id);
+};
 
-window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
+document.addEventListener('click', onBookClick);
+
+function closeModal(event) {
+  if (event.key === 'Escape' || event.target === backdrop) {
     modal.classList.add('hidden');
     backdrop.classList.remove('backdrop_open');
+    document.addEventListener('click', onBookClick);
+    modalMarkup.innerHTML = '';
   }
-});
+}
+document.addEventListener('keydown', closeModal);
 
-window.addEventListener('click', (event) => {
-  if (event.target === backdrop) {
-    modal.classList.add('hidden');
-    backdrop.classList.remove('backdrop_open');
-  }
-})
+document.addEventListener('click', closeModal);
 
-
-addbook.addEventListener('click', (e) => {
+addbook.addEventListener('click', () => {
   if (addbook.textContent === 'add to shoping list') {
-    addbook.textContent = 'remove from the shopping list';
+    setTimeout(() => { addbook.textContent = 'remove from the shopping list' }, 150);
+    // addbook.textContent = 'remove from the shopping list';
     addbook.style.width = '279px';
     addbook.style.left = '29px';
     modal.style.height = '806px';
@@ -49,23 +61,6 @@ addbook.addEventListener('click', (e) => {
 });
 
 
-
-const getBooks = async (id) => {
-  try {
-    const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
-    console.log(response.data);
-    booksCard(response.data)
-  }
-  catch (error) {
-    console.log(error);      
-  }
-};
-
-getbook.addEventListener('click', getBooks('643282b1e85766588626a0c2'));
-// 643282b1e85766588626a0c0
-// 643282b1e85766588626a0c2
-// 643282b1e85766588626a0b6 working 
-
 function booksCard(book) {
   const markup = `<div class='book-card'>
     <img class="book-img" src="${book.book_image}"  alt="photo_of_book " loading="lazy">
@@ -78,7 +73,7 @@ function booksCard(book) {
     <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[4].url}"><img src="./images/image3.png" width="38px" heigth="36px"/></a></li>    
     </ul>
     </div>`;
-    return modal.insertAdjacentHTML('afterbegin', markup);
-};
+  return modalMarkup.insertAdjacentHTML('afterbegin', markup)
+}
 
 export { booksCard }

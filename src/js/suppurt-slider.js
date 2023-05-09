@@ -1,10 +1,8 @@
 import { supportList } from "./support-list"
 
 
-
-
 const sliderWrapper = document.querySelector('.swiper-wrapper');
-
+const sliderNextBtn = document.querySelector('.slider__next')
 
 // renderSupportMarkup();
 function renderSupportMarkup() {
@@ -17,10 +15,25 @@ function renderSupportMarkup() {
             </div>
         `
     }).join('');
-    console.log(supportMarcup);
+
     sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
 };
 renderSupportMarkup();
+SupportSlider();
+
+function SupportSlider() {
+    const sliderItem = Array.from(sliderWrapper.children);
+    sliderItem.forEach(function (slide) {
+        for (let i = 6; i < sliderItem.length; i++) {
+            sliderItem[i].classList.add('support-slider-hidden');
+        }
+        sliderNextBtn.addEventListener('click', function () {
+            slide.classList.toggle('support-slider-hidden');
+            return;
+        })     
+        return;
+});
+}
 
 
 
