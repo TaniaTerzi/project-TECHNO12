@@ -173,12 +173,10 @@ transition: background-color 0.5s ease;;
 //   // gap:40px;
 // }
 
-
-// ShendrykA from 32 to 161 lines
-
 .conteiner-shopping-books {
   display: flex;
   flex-direction: column;
+  width: 996px;
 }
 
 .container-shopping-card {
@@ -196,7 +194,8 @@ transition: background-color 0.5s ease;;
   min-width: 116px;
   height: 165px;
   margin-right: 24px;
-  border: solid 3px var(--blue-color);;
+  // border: solid 3px var(--blue-color);
+  border-radius: 8px;
 }
 
 .shopping-card-title {
@@ -224,6 +223,7 @@ transition: background-color 0.5s ease;;
 
 .shopping-card-description {
   margin: 0 0 24px;
+  height: 53px;
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
