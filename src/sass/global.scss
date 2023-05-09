@@ -1,9 +1,8 @@
-
 * {
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 ::-webkit-scrollbar {
-	width: 15px;
+  width: 15px;
 }
 
 h1,
@@ -14,24 +13,35 @@ h5,
 h6,
 p,
 ul {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0 auto;
-	min-width: 320px;
+  min-width: 320px;
   max-width: 1440px;
   background-color: var(--bg-color);
   color: var(--text-color);
 }
 
-.main{
-	display: flex;
-	padding: 40px 24px;
+.main {
+  padding: 40px 24px;
 }
 
 .visually-hidden {
   position: fixed;
   transform: scale(0);
+}
+
+@media screen and (max-width: 1199px) {
+  .main {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main {
+    display: flex;
+  }
 }
