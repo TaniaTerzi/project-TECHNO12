@@ -1,0 +1,22 @@
+.burger-container {
+    height: 812px;
+    max-width: 375px;
+    background-color: #111111;
+}
+
+.sign-up-link-burger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 184px;
+    padding: 12px 14px;
+    text-decoration: none;
+    background: var(--blue-color);
+    border: 1.5px solid #111111;
+    border-radius: 18px;
+  
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+}
