@@ -1,6 +1,6 @@
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
-showLoadingIndicator();
+ showLoadingIndicator();
 
 window.onload = function () {
   Loading.remove(1500);
@@ -18,3 +18,4 @@ export function removeLoader() {
     Loading.remove();
   };
 }
+
