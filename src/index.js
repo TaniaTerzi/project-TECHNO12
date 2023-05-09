@@ -1,4 +1,4 @@
-import { showLoadingIndicator, removeLoader } from './js/loader';
+// import { showLoadingIndicator, removeLoader } from './js/loader';
 import { slider, toggleSwitch } from './js/toggle.js';
 import { scrollButton } from './js/scroll-up.js';
 import { renderSupportMarkup } from './js/suppurt-slider.js';

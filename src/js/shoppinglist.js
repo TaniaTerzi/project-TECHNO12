@@ -9,7 +9,7 @@ const LOCALSTORAGE_KEY = 'SHOPPINGLIST';
 shoppingListRef.addEventListener('click', onShoppingList);
 shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
 
-function onShoppingList(e) {
+export function onShoppingList(e) {
   e.preventDefault();
   try {
     if (localStorage.getItem(LOCALSTORAGE_KEY)) {
@@ -80,7 +80,7 @@ function markupShoppingList(books) {
     `, '');
 }
 
-function markupEmpty() {
+ function markupEmpty() {
   return `
       <div class="container-shopping-empty">
         <p class="shopping-empty-text">
