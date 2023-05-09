@@ -5,3 +5,4 @@ import { renderingBooksCategories, renderingCategory } from './js/booksRendering
 import { booksCard } from './js/modal_book_card.js';
 import  {createCategoryList } from './js/categories.js';
 import  {onShoppingList } from './js/shoppinglist.js'
+// import  { modalOpenRagister, modalCloseRagister } from './js/registration.js'
