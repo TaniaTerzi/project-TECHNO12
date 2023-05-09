@@ -1,0 +1,2 @@
+!function(){document.querySelector(".title-text .login");var e=document.querySelector("form.login"),n=document.querySelector("label.login"),t=document.querySelector("label.signup"),c=document.querySelector("form .signup-link a");t.onclick=function(){e.style.marginLeft="-50%"},n.onclick=function(){e.style.marginLeft="0%"},c.onclick=function(){return t.click(),!1}}();
+//# sourceMappingURL=index.d0b1909a.js.map
