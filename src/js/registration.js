@@ -46,7 +46,7 @@ function createUser(event) {
     .then(userCredential => {
       // Signed in
       const user = userCredential.user;
-      alert(`Welcome to Filmoteka, ${formElements.username}!`);
+      alert(`Welcome to Bookshelf, ${formElements.username}!`);
       modal.classList.toggle('visually-hidden');
       return user;
     })
@@ -63,74 +63,7 @@ function createUser(event) {
       alert(errorMessage);
     });
   event.currentTarget.reset();
-}
-
-// Функция входу користувача та отримання його данних
-function getUser(event) {
-  event.preventDefault();
-  const formElements = {
-    email: event.currentTarget.elements.email.value,
-    password: event.currentTarget.elements.password.value,
-  };
-  signInWithEmailAndPassword(auth, formElements.email, formElements.password)
-    .then(userCredential => {
-      // Signed in
-      const user = userCredential.user;
-
-      const db = getDatabase();
-      const nameRef = ref(db, 'users/' + user.uid + '/username');
-      onValue(nameRef, snapshot => {
-        const name = snapshot.val();
-
-        const user = {
-          id: auth.currentUser.uid,
-          email: auth.currentUser.email,
-          name: snapshot.val(),
-        };
-        alert(`Welcome back, ${name}`);
-
-        document.location.href = 'library.html'; //Перехід на сторінку Library після авторизації
-        logoutBtn.classList.toggle('visually-hidden');
-        libraryBtn.classList.remove('disabled');
-
-        modal.classList.toggle('visually-hidden');
-      });
-      return user;
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
-    });
-}
-
-const authCheking = () => {
-  onAuthStateChanged(auth, user => {
-    if (user) {
-      //Getting users name
-      const db = getDatabase();
-      const nameRef = ref(db, 'users/' + user.uid + '/username');
-      onValue(nameRef, snapshot => {
-        const name = snapshot.val();
-
-        const userIn = {
-          id: auth.currentUser.uid,
-          email: auth.currentUser.email,
-          name: snapshot.val(),
-        };
-        userNameContainer.insertAdjacentHTML('afterbegin', `<p>${name}</p>`);
-        openModalBtn.classList.add('visually-hidden');
-        logoutBtn.classList.remove('visually-hidden');
-        libraryBtn.classList.remove('disabled');
-      });
-
-      // ...
-    }
-  });
-};
-
-authCheking();
-//Функція виходу зі сторінки користувача
+}; //Функція виходу зі сторінки користувача
 function logOutUser(event) {
   signOut(auth)
     .then(() => {
@@ -144,9 +77,6 @@ function logOutUser(event) {
       const errorMessage = error.message;
       alert(errorMessage);
     });
-}
+};
 
 
-
-// export const modalOpenRagister = openForm();
-// export const modalCloseRagister = closeForm()
