@@ -1,14 +1,32 @@
-const shoppingListRef = document.querySelector('div');
-console.log(shoppingListRef);
+import Notiflix from 'notiflix';
 
-console.log('dfbdfhdf');
+const shoppingListRef = document.querySelector('.shopping-link-order');
+const shoppingListContainerRef = document.querySelector('.container-shopping-card');
 
-// shoppingListRef.addEventListener('click', onShoppingList);
+const LOCALSTORAGE_KEY = 'SHOPPINGLIST';
 
-function onShoppingList() {
-  const aA = console.log('Hi!');
+shoppingListRef.addEventListener('click', onShoppingList);
+
+function onShoppingList(e) {
+  e.preventDefault();
+  Notiflix.Notify.info('Hi from onShoppingList');
+  try {
+    if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+      userData = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+      console.log(userData);
+      console.log(shoppingListContainerRef);
+      
+
+      
+
+      // formRef.email.value = userData.email;
+      // formRef.message.value = userData.message;    
+    }
+    else {
+      // Рендерім пустишку
+      Notiflix.Notify.failure('Shopping list is empty!');
+    }
+  } catch (error) {
+    Notiflix.Notify.failure("Set state error: ", error.message);
+  }
 }
-
-onShoppingList();
-
-export { onShoppingList };
