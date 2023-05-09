@@ -15,12 +15,20 @@ function scrollToTop() {
     allowScroll = true;
   } else {
     if (scroller > 0) {
-      window.scrollTo(0, scroller);
+      window.scrollTo({
+        top: scroller,
+        left: 0,
+        behavior: 'smooth',
+      });
       scroller = scroller - 100;
-      timer = setTimeout(scrollToTop, 20);
+      timer = setTimeout(scrollToTop, 5);
     } else {
       clearTimeout(timer);
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
       scrollButton.style.opacity = 1;
     }
   }
