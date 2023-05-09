@@ -2,7 +2,6 @@ import { FetchBooks } from './fetchBooks';
 import Notiflix from 'notiflix';
 import AOS from 'aos';
 
-
 AOS.init({
   duration: 1200,
 });
@@ -48,7 +47,7 @@ async function renderingBooksCategories() {
             <a class="link-books-render" href="#" onclick="event.preventDefault()">
               <div class="card-book">
                 <div class="img-card-book">
-                  <img src="${book.book_image}" alt="book" class="img-book">
+                  <img src="${book.book_image}" alt="book" class="img-book" loading="lazy">
                   <p class="book-card overlay">Quick view</p>
                 </div>
                 <div class="box-text-book-best">
@@ -107,7 +106,7 @@ async function handleLoadMore(e) {
             <a class="link-books-render" href="#" onclick="event.preventDefault()">
               <div class="card-book">
                 <div class="img-card-book">
-                  <img src="${book_image}" alt="book" class="img-book">
+                  <img src="${book_image}" alt="book" class="img-book" loading="lazy">
                   <p class="book-card overlay">Quick view</p>
                 </div>
                 <div class="box-text-book-category">
