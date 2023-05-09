@@ -1,3 +1,12 @@
+//  opem modal
+//  function openForm() {
+//   document.getElementById("myForm").style.display = "block";
+// }
+
+// function closeForm() {
+//   document.getElementById("myForm").style.display = "none";
+// }
+ 
  const loginText = document.querySelector(".title-text .login");
       const loginForm = document.querySelector("form.login");
       const loginBtn = document.querySelector("label.login");
@@ -15,9 +24,6 @@
         signupBtn.click();
         return false;
       });
-
-
-
 
 
 // Create user
@@ -71,10 +77,6 @@ function logOutUser(event) {
       const errorMessage = error.message;
       alert(errorMessage);
     });
-<<<<<<< Updated upstream
-}
-=======
 };
 
-// firebase
->>>>>>> Stashed changes
+
