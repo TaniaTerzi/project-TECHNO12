@@ -23,9 +23,16 @@
  }
 
  .wrapper {
-    position: absolute;
-    
-     overflow: hidden;
+    display:none;
+    overflow: hidden;
+
+    position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        
      max-width: 450px;
      background: rgba(32, 32, 36, 1);
      padding: 30px;
