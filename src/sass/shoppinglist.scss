@@ -99,6 +99,7 @@ margin-right: 76;
 }
 
 .home-link-shopping {
+		width: 72px;
 font-weight: 700;
 font-size: 14px;
 line-height: 18px;
@@ -108,6 +109,14 @@ text-transform: uppercase;
 
 color: var(--text-color);
 margin-right: 24px;
+ box-sizing: border-box;
+ padding: 8px 16px;
+transition: background-color 0.5s ease;;
+}
+.home-link-shopping:hover {
+	padding: 6px 14px;
+	   border: 2px solid var(--yellow-color);
+	 border-radius: 36px;
 }
 
 .shopping-link-order {
@@ -120,6 +129,15 @@ margin-right: 24px;
   padding: 8px 16px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+}
+.shopping-link-order {
+	color: #111111;
+}
+
+.shopping-link-order:hover {
+		padding: 6px 14px;
+	   border: 2px solid var(--yellow-color);
+	 border-radius: 36px;
 }
 
 .conteiner-shopping-list {
