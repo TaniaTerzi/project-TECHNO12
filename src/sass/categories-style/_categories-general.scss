@@ -2,15 +2,18 @@
   display: block;
   width: 356px;
   overflow-y: scroll;
+	
 }
 
 .categories-list {
   list-style: none;
   max-width: 356px;
+
 }
 
 .categories-list__item {
   text-decoration: none;
+
 }
 
 .categories-list__button {
@@ -20,6 +23,7 @@
   border: none;
   outline: none;
   background-color: transparent;
+			color: var(--text-color);
 }
 
 .active-category {
@@ -27,6 +31,7 @@
   font-size: 18px;
   line-height: 24px;
   color: #4f2ee8;
+			// color: var(--text-color);
 }
 
 ::-webkit-scrollbar {
