@@ -48,6 +48,38 @@
             </svg>
           </a>
         </div>
+
+        <div class="userbar">
+          <a class="logged-user">
+            <img
+              class="user-avatar"
+              srcset="
+                images/user_avatar_x1.png 1x,
+                images/user_avatar_x2.png 2x
+              "
+              src="images/user_avatar_x1.png"
+              alt="user avatar"
+              width="35"
+            />
+            Степан Бандера<svg
+              class="user-dropdown"
+              fill="white"
+              width="15"
+              height="15"
+            >
+              <use href="/src/images/svg/svg_sprite.svg#user-dropdown"></use>
+            </svg>
+          </a>
+          <div>
+            <a class="logout visually-hidden">
+              Log out
+              <svg class="arrow-right" width="20" height="20">
+                <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+
         <button class="menu-button" data-menu-open aria-label="menu">
           <svg class="menu-hamburger" width="28" height="28">
             <use href="/src/images/svg/svg_sprite.svg#burger-menu"></use>
@@ -57,7 +89,7 @@
     </header>
     <main class="shopping_list_main">
       <div class="conteiner-shopping-list">
-        <div class="shopping-direction ">
+        <div class="shopping-direction">
           <include src="./partials/support-slider.html"></include>
         </div>
         <div class="conteiner-shopping-books">
@@ -71,38 +103,59 @@
                 <p class="shopping-card-title">I WILL FIND YOU</p>
                 <p class="shopping-card-list-name">Hardcover fiction</p>
                 <p class="shopping-card-description">
-                  David Burroughs was once a devoted father to his three-year-old
-                  son Matthew, living a dream life just a short drive away from the
-                  working-class suburb where he and his wife, Cheryl, first fell in
-                  love--until one fateful night when David woke suddenly to discover
-                  Matthew had been murdered while David was asleep just down the
-                  hall.
+                  David Burroughs was once a devoted father to his
+                  three-year-old son Matthew, living a dream life just a short
+                  drive away from the working-class suburb where he and his
+                  wife, Cheryl, first fell in love--until one fateful night when
+                  David woke suddenly to discover Matthew had been murdered
+                  while David was asleep just down the hall.
                 </p>
                 <div class="shopping-card-footer">
                   <p class="shopping-card-author">Harlan Coben</p>
                   <ul class="shopping-card-list">
                     <li class="shopping-card-item">
                       <a href="./index.html">
-                        <img class="shopping-card-pic" srcset="
-                                      ./images/amazon_x1.png 1x,
-                                      ./images/amazon_x2.png 2x
-                                    " src="./images/amazon_x1.png" alt="amazon" width="48" height="15" />
+                        <img
+                          class="shopping-card-pic"
+                          srcset="
+                            ./images/amazon_x1.png 1x,
+                            ./images/amazon_x2.png 2x
+                          "
+                          src="./images/amazon_x1.png"
+                          alt="amazon"
+                          width="48"
+                          height="15"
+                        />
                       </a>
                     </li>
                     <li class="shopping-card-item">
                       <a href="./index.html">
-                        <img class="shopping-card-pic" srcset="
-                                      ./images/white_book_x1.png 1x,
-                                      ./images/white_book_x2.png 2x
-                                    " src="./images/white_book_x1.png" alt="white_book" width="28" height="27" />
+                        <img
+                          class="shopping-card-pic"
+                          srcset="
+                            ./images/white_book_x1.png 1x,
+                            ./images/white_book_x2.png 2x
+                          "
+                          src="./images/white_book_x1.png"
+                          alt="white_book"
+                          width="28"
+                          height="27"
+                        />
                       </a>
                     </li>
                     <li class="shopping-card-item">
                       <a href="./index.html">
-                        <img class="shopping-card-pic" srcset="
-                                      ./images/black_book_x1.png 1x,
-                                      ./images/black_book_x2.png 2x
-                                    " src="./images/black_book_x1.png" alt="black_book" width="32" height="30" />
+                        <img
+                          class="shopping-card-pic"
+                          srcset="
+                            ./images/black_book_x1.png 1x,
+                            ./images/black_book_x2.png 2x
+                          "
+                          src="./images/black_book_x1.png"
+                          alt="black_book"
+                          width="32"
+                          height="30"
+                        />
                       </a>
                     </li>
                   </ul>
@@ -118,19 +171,20 @@
               <p class="shopping-empty-text">
                 This page is empty, add some books and proceed to order.
               </p>
-              <img class="shopping-empty-img" srcset="./images/books_x1.png 1x, ./images/books_x2.png 2x"
-                src="./images/books_x1.png" alt="books" />
+              <img
+                class="shopping-empty-img"
+                srcset="./images/books_x1.png 1x, ./images/books_x2.png 2x"
+                src="./images/books_x1.png"
+                alt="books"
+              />
             </div>
           </div>
         </div>
       </div>
     </main>
 
-
     <include src="./partials/scroll-up.html"></include>
     <script type="module" src="./js/shoppinglist.js"></script>
     <script type="module" src="./index.js"></script>
-    
-
   </body>
 </html>
