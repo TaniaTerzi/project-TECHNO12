@@ -1,3 +1,12 @@
+//  opem modal
+//  function openForm() {
+//   document.getElementById("myForm").style.display = "block";
+// }
+
+// function closeForm() {
+//   document.getElementById("myForm").style.display = "none";
+// }
+ 
  const loginText = document.querySelector(".title-text .login");
       const loginForm = document.querySelector("form.login");
       const loginBtn = document.querySelector("label.login");
@@ -15,9 +24,6 @@
         signupBtn.click();
         return false;
       });
-
-
-
 
 
 // Create user
@@ -72,6 +78,13 @@ function logOutUser(event) {
       alert(errorMessage);
     });
 
+};
+
+
+// Get the modal
+// var modalWrapper = document.getElementById("myWrapper");
+
+
 }
 
 
@@ -86,6 +99,3 @@ window.onclick = function (event) {
   }
 
 }
-
-
-

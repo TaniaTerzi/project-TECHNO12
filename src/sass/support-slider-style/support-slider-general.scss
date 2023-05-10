@@ -1,3 +1,7 @@
+.support-slider-hidden {
+  display: none;
+}
+
 .support-slider-container {
   display: inline-block;
   width: 356px;
@@ -18,21 +22,27 @@
 .support-heading-block {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .support-slider-heading {
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
   color: #ffffff;
-  width: 205px;
-  height: 32px;
   display: block;
   padding: 0;
   margin: 0;
 }
 
 .swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 40px;
-  height: 330px;
+  padding-bottom: 68px;
+  height: 100%;
 }
 
 .support-link {
@@ -40,7 +50,13 @@
   color: #ffffff;
 }
 .support-id {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
   margin-right: 14px;
+  letter-spacing: -0.04em;
 }
 
 .slider__next {

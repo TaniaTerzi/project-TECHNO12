@@ -1,10 +1,10 @@
+import Swiper from "swiper";
 import { supportList } from "./support-list"
 
-
-
-
+const sliderContainer = document.querySelector('.support-slider-container')
 const sliderWrapper = document.querySelector('.swiper-wrapper');
-
+const sliderNextBtn = document.querySelector('.slider__next');
+console.log(sliderContainer);
 
 // renderSupportMarkup();
 function renderSupportMarkup() {
@@ -17,10 +17,55 @@ function renderSupportMarkup() {
             </div>
         `
     }).join('');
-    console.log(supportMarcup);
+
     sliderWrapper.insertAdjacentHTML('afterbegin', supportMarcup);
 };
 renderSupportMarkup();
+
+
+
+SupportSlider();
+
+function SupportSlider() {
+    const sliderItem = Array.from(sliderWrapper.children);
+    sliderItem.forEach(function (slide) {
+        //desctop support render
+        if (sliderContainer.clientHeight === 490) {
+            for (let i = 6; i < sliderItem.length; i++) {
+                sliderItem[i].classList.add('support-slider-hidden');
+            }
+            sliderNextBtn.addEventListener('click', function () {
+                slide.classList.toggle('support-slider-hidden');
+                return;
+            })     
+            return;
+        }
+
+        //tablet support render
+        if (sliderContainer.clientHeight === 472) {
+            for (let i = 6; i < sliderItem.length; i++) {
+                sliderItem[i].classList.add('support-slider-hidden');
+            }
+            sliderNextBtn.addEventListener('click', function () {
+                slide.classList.toggle('support-slider-hidden');
+                return;
+            })     
+            return;
+        }
+
+        //mobile support rener 
+        if (sliderContainer.clientHeight === 352) {
+            for (let i = 4; i < sliderItem.length; i++) {
+                sliderItem[i].classList.add('support-slider-hidden');
+            }
+            sliderNextBtn.addEventListener('click', function () {
+                slide.classList.toggle('support-slider-hidden');
+                return;
+            })     
+            return;
+        }
+});
+}
 
 
 
