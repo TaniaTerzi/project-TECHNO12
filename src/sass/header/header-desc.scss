@@ -144,3 +144,42 @@ text-transform: uppercase;
 	color: #111111;
 }
 }
+
+
+/// USERBAR ///
+
+.logged-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 184px;
+  padding: 5px 5px;
+  text-decoration: none;
+  background: var(--blue-color);
+  border: 1.5px solid #111111;
+  border-radius: 18px;
+
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.logout {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 184px;
+  padding: 12px 14px;
+  text-decoration: none;
+  background: white;
+  border: 1.5px solid #111111;
+  border-radius: 18px;
+
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #000000;
+}
