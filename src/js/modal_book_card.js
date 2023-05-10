@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { FetchBooks } from './fetchBooks';
+import photoAmazon from '../images/amazon_x3.png'
+import photoAppleBook from '../images/white_book_x3.png'
+import photoBlackBook from '../images/black_book_x3.png'
 
 const modal = document.querySelector('.modal');
 const modalMarkup = document.querySelector('.modal-markup');
@@ -87,9 +90,9 @@ function booksCard(book) {
     <p class="book-author">${book.author}</p>
     <p class="book-descr">${book.description}</p>
     <ul class="online-shops-list">
-    <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[0].url}"><img src="./images/image1.png" width="62px" heigth="19px"/></a></li>
-    <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[1].url}"><img src="./images/image2.png" width="32px" heigth="32px"/></a></li>
-    <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[4].url}"><img src="./images/image3.png" width="38px" heigth="36px"/></a></li>    
+    <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[0].url}"><img src="${photoAmazon}" width="62px" heigth="19px"/></a></li>
+    <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[1].url}"><img src="${photoAppleBook}" width="32px" heigth="32px"/></a></li>
+    <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[4].url}"><img src="${photoBlackBook}" width="38px" heigth="36px"/></a></li>    
     </ul>
     </div>`;
   return modalMarkup.insertAdjacentHTML('afterbegin', markup)
