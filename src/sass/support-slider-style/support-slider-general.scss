@@ -39,13 +39,14 @@
 .swiper-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding-top: 40px;
   padding-bottom: 68px;
   height: 100%;
 }
 
 .support-link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #ffffff;
 }
@@ -62,7 +63,7 @@
 .slider__next {
   position: absolute;
   bottom: 24px;
-  left: 50%;
+  left: 152px;
   cursor: pointer;
   text-align: center;
   width: 38px;
@@ -77,4 +78,6 @@
 .support-img {
   display: inline-block;
   height: 32px;
+  max-width: 149px;
+  filter: invert(1) brightness(100);
 }

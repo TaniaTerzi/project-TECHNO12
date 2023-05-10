@@ -1,10 +1,13 @@
 import Swiper from "swiper";
 import { supportList } from "./support-list"
 
+
+
+
+
 const sliderContainer = document.querySelector('.support-slider-container')
 const sliderWrapper = document.querySelector('.swiper-wrapper');
 const sliderNextBtn = document.querySelector('.slider__next');
-console.log(sliderContainer);
 
 // renderSupportMarkup();
 function renderSupportMarkup() {

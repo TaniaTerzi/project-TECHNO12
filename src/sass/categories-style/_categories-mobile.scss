@@ -1,0 +1,9 @@
+@media screen and (max-width: 767px) {
+  .categories-block {
+    height: 352px;
+  }
+
+  .categories-list__item:not(:last-child) {
+    padding-bottom: 20px;
+  }
+}
