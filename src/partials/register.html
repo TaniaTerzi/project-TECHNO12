@@ -1,84 +1,42 @@
 
+<div class="reg-modal-backdrop" onclick="closeForm()"></div>
 
-        <button class="close-button" type="button" onclick="closeForm()">
+		
+		<div class="reg-form-popup" id="myForm">
+
+        <form action="/action_page.php" class="reg-form-register">
+            <button class="reg-close-button" type="button" onclick="closeForm()">
+                <svg class="reg-close-icon" width="31" height="31">
+                    <use href="#"></use>
+                </svg>
+            </button>
 
 
-    <!-- <button id="openBtn" class="open-button" onclick="openForm()">Sign in</button> -->
+
+            <label for="name"></label>
+
+                <input class="reg-input-forms" type="text" placeholder="NAME" name="email" required>
 
 
-    <!-- <button class="open-button" onclick="openForm()">Sign in</button> -->
-    
+            <label for="email"></label>
 
-    <div class="wrapper" id="myWrapper">
+            <input class="reg-input-forms" type="text" placeholder="EMAIL" name="email" required>
 
-        <button id="closeBtn" class="close-button" type="button" onclick="closeForm()">
 
-            <svg class="mobile-menu_close-icon" width="10" height="10">
-                            <use href="./images/svg/x-button_white.svg"></use>
-                        </svg>
-        </button>
+            <label for="psw"></label>
 
-        <div class="form-container">
-            <div class="slide-controls">
-                <input type="radio" name="slide" id="login" checked>
-                <input type="radio" name="slide" id="signup">
-                <label for="login" class="slide login">SIGN IN</label>
-                <label for="signup" class="slide signup">SIGN UP</label>
-                <div class="slider-tab"></div>
+            <input class="reg-input-forms" type="password" placeholder="PASSWORD" name="psw" required>
+
+
+
+            <button type="submit" class="reg-btn-submit">SIGN UP</button>
+
+            <div class="register-links">
+            <a class="reg-signup-btn" href="">SING UP</a>
+            <a class="reg-signin-btn" href="">SING IN</a>
             </div>
-
-            <div class="form-inner">
-                <form action="#" class="login">
-                    <div class="field">
-                        <svg class="mobile-menu_close-icon"  width="10" height="10">
-                            <use href="./images/svg/email_white.svg"></use>
-                        </svg>
-                        <input type="text" placeholder="EMAIL" required>
-                    </div>
-                    <div class="field">
-                        <svg class="mobile-menu_close-icon" width="10" height="10">
-                            <use href="./images/svg/x-button_white.svg"></use>
-                        </svg>
-                        <input type="password" placeholder="PASSWORD" required>
-                    </div>
-                    <div class="pass-link"><a href="#">Forgot password?</a></div>
-                    <div class="field btn">
-                        <div class="btn-layer"></div>
-                        <button class="btn-queue-modal btn" id="login" type="submit">SIGN IN</button>
-                        </div>
-                    <div class="signup-link"><a href="">I don't have an account</a></div>
-                </form>
-
-
-                <form action="#" class="signup">
-                    <div class="field">
-                        <input type="text" placeholder="NAME" required>
-                    </div>
-                    <div class="field">
-                        <input type="email" placeholder="EMAIL" required>
-                    </div>
-                    <div class="field">
-                        <input type="password" placeholder="PASSWORD" required>
-                    </div>
-                    <div class="field btn">
-                        <div class="btn-layer">
-                            
-                        </div>
-                        <button class="btn-queue-modal btn" id="register" type="submit">SIGN ME UP</button>
-                        </div>
-                        
-                </form>
-            </div>
-        </div>
+        </form>
     </div>
-    <script>
-        function openForm() {
-            document.getElementById("myWrapper").style.display = "block";
+</div>
 
-        }
-
-        function closeForm() {
-            document.getElementById("myWrapper").style.display = "none";
-        }
-    </script>
-    <script type="module" src="./js/registration.js"></script>
+  <script type="module" src="./js/open_form.js"></script>
