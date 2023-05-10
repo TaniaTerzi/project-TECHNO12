@@ -1,5 +1,5 @@
 // import { showLoadingIndicator, removeLoader } from './js/loader';
-import { slider, toggleSwitch, userLogin, userLogout } from './js/toggle.js';
+import { slider, toggleSwitch } from './js/toggle.js';
 import { scrollButton } from './js/scroll-up.js';
 import { renderSupportMarkup } from './js/suppurt-slider.js';
 import {
@@ -10,4 +10,5 @@ import { booksCard } from './js/modal_book_card.js';
 // import { showLoadingIndicator } from './js/loader.js';
 import { createCategoryList } from './js/categories.js';
 import { onShoppingList } from './js/shoppinglist.js';
+import { userLogin, userLogout } from './js/userbar.js';
 // import  { modalOpenRagister, modalCloseRagister } from './js/registration.js'
