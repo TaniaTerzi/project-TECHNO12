@@ -15,6 +15,7 @@ export function onShoppingList(e) {
     if (localStorage.getItem(LOCALSTORAGE_KEY)) {
       books = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
       console.log(books);
+      console.log(document);
       shoppingListContainerRef.innerHTML = '';
       shoppingListContainerRef.innerHTML = markupShoppingList(books);
     }
