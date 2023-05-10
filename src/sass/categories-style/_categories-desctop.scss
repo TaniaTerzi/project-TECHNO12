@@ -1,0 +1,10 @@
+@media screen and (min-width: 1200px) {
+  .categories-block {
+    height: 490px;
+    margin-bottom: 86px;
+  }
+
+  .categories-list__item:not(:last-child) {
+    padding-bottom: 32px;
+  }
+}

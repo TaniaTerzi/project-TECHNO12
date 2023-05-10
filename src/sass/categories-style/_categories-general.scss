@@ -1,7 +1,12 @@
+.categories-block {
+  display: block;
+  width: 356px;
+  overflow-y: scroll;
+}
+
 .categories-list {
   list-style: none;
   max-width: 356px;
-  margin-bottom: 86px;
 }
 
 .categories-list__item {
@@ -14,7 +19,7 @@
 
   border: none;
   outline: none;
-  background-color: rgb(246, 246, 246);
+  background-color: transparent;
 }
 
 .active-category {
@@ -22,4 +27,15 @@
   font-size: 18px;
   line-height: 24px;
   color: #4f2ee8;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background-color: #e0e0e0;
+  /* -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); */
 }
