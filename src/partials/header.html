@@ -1,6 +1,6 @@
-<header dark-mode-header>
+<header class="dark-mode-header">
   <div class="container-header">
-    <a class="header-logo" href="#">
+    <a class="header-logo" href="/src/index.html">
       <img
         class="logo-img"
         src="../src/images/logo.png"
@@ -9,6 +9,13 @@
         height="25"
       />
       <p>Bookshelf</p>
+    </a>
+
+    <a class="home-link" href="./index.html">Home </a>
+    <a class="shopping-list-link" href="./shoppinglist.html"
+      >shopping list<svg class="arrow-right" width="20" height="20">
+        <use href="/src/images/svg/shopping_bag.svg"></use>
+      </svg>
     </a>
 
     <div class="right-header">
@@ -20,7 +27,7 @@
         </span>
       </div>
 
-      <a class="sign-up-link" href="#"
+      <!-- <a class="sign-up-link" href="#"
         >Sign in<svg class="arrow-right" width="20" height="20">
           <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use></svg>
         </a>
@@ -36,9 +43,53 @@
         >Sign in<svg class="arrow-right" width="20" height="20">
           <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
         </svg>
-      </a>
+      </a> -->
 
+
+      <a
+        id="signup-link"
+        class="sign-up-link"
+        href=""
+        onclick="openForm(); return false;"
+        >Sign up<svg class="arrow-right" width="20" height="20">
+          <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="userbar">
+      <a class="logged-user">
+        <img
+          class="user-avatar"
+          srcset="images/user_avatar_x1.png 1x, images/user_avatar_x2.png 2x"
+          src="images/user_avatar_x1.png"
+          alt="user avatar"
+          width="35"
+        />
+        Степан Бандера<svg
+          class="user-dropdown"
+          fill="white"
+          width="15"
+          height="15"
+        >
+          <use href="/src/images/svg/svg_sprite.svg#user-dropdown"></use>
+        </svg>
+      </a>
+      <div>
+        <a class="logout visually-hidden">
+          Log out
+          <svg class="arrow-right" width="20" height="20">
+            <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
+          </svg>
+        </a>
+      </div>
 
     </div>
+
+    <button class="menu-button" data-menu-open aria-label="menu">
+      <svg class="menu-hamburger" width="28" height="28">
+        <use href="/src/images/svg/svg_sprite.svg#burger-menu"></use>
+      </svg>
+    </button>
   </div>
 </header>
