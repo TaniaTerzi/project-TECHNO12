@@ -85,9 +85,6 @@ function logOutUser(event) {
 // var modalWrapper = document.getElementById("myWrapper");
 
 
-}
-
-
 
 // firebase
 
