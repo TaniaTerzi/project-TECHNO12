@@ -99,7 +99,6 @@
     height: 36px;
     left: 47px;
     top: 730px;
-    font-family: 'DM Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
@@ -143,6 +142,13 @@
         width: 287px;
         height: 408px;
         margin: 40px 24px 14px 24px;
+    }
+    .addbook-change-size {
+        width: 279px;
+        left: 29px;
+    }
+    .modal-change-size {
+        height: 806px;
     }
         
 }
@@ -191,5 +197,16 @@
         height: 64px;
         font-size: 18px;
         line-height: 24px;
+    }
+    .modal-change-size {
+        height: 501px;
+    }
+    .add-book-info {
+        width: 335px;
+        height: 29px;
+        left: 128px;
+        top: 433px;
+        font-size: 12px;
+        line-height: 14px;
     }
 }
