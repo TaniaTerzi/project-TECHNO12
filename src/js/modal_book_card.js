@@ -8,6 +8,7 @@ const modal = document.querySelector('.modal');
 const modalMarkup = document.querySelector('.modal-markup');
 const addbook = document.querySelector('.addbook');
 const backdrop = document.getElementById('backdrop');
+const closeModalBtn = document.querySelector('.modal-book-close');
 
 async function getBooks(id){
   try {
@@ -66,6 +67,17 @@ function changeBtn() {
     // localStorage.removeItem('bookInfo');
   }
 }
+
+closeModalBtn.addEventListener('click', () => {
+  modal.classList.add('hidden');
+  backdrop.classList.remove('backdrop_open');
+  document.addEventListener('click', onBookClick);
+  modalMarkup.innerHTML = '';
+  addbook.textContent = 'add to shoping list';
+  const p = document.querySelector('.add-book-info');
+  p.remove();
+  modal.classList.remove('modal-change-size');
+});
 
 function closeModal(event) {
   if (event.key === 'Escape' || event.target === backdrop) {
