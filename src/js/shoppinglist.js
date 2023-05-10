@@ -92,3 +92,6 @@ function markupShoppingList(books) {
       </div>
     `;
 }
+
+import { slider, toggleSwitch } from './toggle.js';
+import { renderSupportMarkup } from './suppurt-slider.js';
