@@ -1,23 +1,31 @@
 import axios from 'axios';
+import { FetchBooks } from './fetchBooks';
 
 const modal = document.querySelector('.modal');
 const modalMarkup = document.querySelector('.modal-markup');
 const addbook = document.querySelector('.addbook');
 const backdrop = document.getElementById('backdrop');
 
-const getBooks = async (id) => {
+async function getBooks(id){
   try {
     const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
     console.log(response.data);
+    // setItemInLocStor(data);
+    // localStorage.setItem('bookInfo', JSON.stringify(response.data));
     booksCard(response.data);
     modal.classList.remove('hidden');
     backdrop.classList.add('backdrop_open');
     document.removeEventListener('click', onBookClick);
+    return response.data;
   }
   catch (error) {
-    console.log(error);      
-  }
-};
+    console.log(error);
+  };
+}
+
+// function setItemInLocStor(value) {
+//     localStorage.setItem('bookInfo', JSON.stringify(value));
+// }
 
 function onBookClick(event) {
   const bookCard = event.target;
@@ -25,7 +33,36 @@ function onBookClick(event) {
   getBooks(id);
 };
 
+addbook.addEventListener('click', changeBtn);
+
 document.addEventListener('click', onBookClick);
+
+function changeBtn() {
+  // const bookInfo = JSON.parse(localStorage.getItem('bookInfo'));
+
+  if (addbook.textContent === 'add to shoping list') {
+    setTimeout(() => { addbook.textContent = 'remove from the shopping list' }, 150);
+    addbook.classList.add('addbook-change-size');
+    modal.classList.add('modal-change-size');
+    const text = document.createElement('p');
+    text.textContent = 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+    text.classList.add('add-book-info');
+    modal.appendChild(text);
+    // localStorage.setItem('bookInfo', JSON.stringify({
+    //   ...bookInfo,
+    //   isInShoppingList: true,
+    // }));
+    onBookClick();
+    getBooks();
+  } else if (addbook.textContent === 'remove from the shopping list') {
+    addbook.textContent = 'add to shoping list';
+    addbook.classList.remove('addbook-change-size');
+    modal.classList.remove('modal-change-size');
+    const p = document.querySelector('.add-book-info');
+    p.remove();
+    // localStorage.removeItem('bookInfo');
+  }
+}
 
 function closeModal(event) {
   if (event.key === 'Escape' || event.target === backdrop) {
@@ -33,33 +70,15 @@ function closeModal(event) {
     backdrop.classList.remove('backdrop_open');
     document.addEventListener('click', onBookClick);
     modalMarkup.innerHTML = '';
-  }
+    addbook.textContent = 'add to shoping list';
+    const p = document.querySelector('.add-book-info');
+    p.remove();
+    modal.classList.remove('modal-change-size');
+  };
 }
 document.addEventListener('keydown', closeModal);
 
 document.addEventListener('click', closeModal);
-
-addbook.addEventListener('click', () => {
-  if (addbook.textContent === 'add to shoping list') {
-    setTimeout(() => { addbook.textContent = 'remove from the shopping list' }, 150);
-    // addbook.textContent = 'remove from the shopping list';
-    addbook.style.width = '279px';
-    addbook.style.left = '29px';
-    modal.style.height = '806px';
-    const text = document.createElement('p');
-    text.textContent = 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-    text.classList.add('add-book-info');
-    modal.appendChild(text);
-  } else if (addbook.textContent === 'remove from the shopping list') {
-    addbook.textContent = 'add to shoping list';
-    addbook.style.width = '211px';
-    addbook.style.left = '62px';
-    modal.style.height = '762px';
-    const p = document.querySelector('.add-book-info');
-    p.remove();
-  }
-});
-
 
 function booksCard(book) {
   const markup = `<div class='book-card'>
@@ -76,4 +95,4 @@ function booksCard(book) {
   return modalMarkup.insertAdjacentHTML('afterbegin', markup)
 }
 
-export { booksCard }
+  export { booksCard }

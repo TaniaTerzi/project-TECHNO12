@@ -88,6 +88,29 @@ function logOutUser(event) {
 
 // firebase
 
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDGzmoR0NXZi-78KRaSzsXdTYxIM2vehx8",
+  authDomain: "bookshelveshere.firebaseapp.com",
+  projectId: "bookshelveshere",
+  storageBucket: "bookshelveshere.appspot.com",
+  messagingSenderId: "62726498466",
+  appId: "1:62726498466:web:840fa857146f9fb8f60ffb",
+  measurementId: "G-CJ91XDP7BR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
 // Get the modal
 var modalWrapper = document.getElementById("myWrapper"); // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
