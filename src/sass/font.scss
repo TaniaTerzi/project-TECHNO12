@@ -1,43 +1,55 @@
 @font-face {
     font-family: "DM Sans";
-    src: local("DMSans-Regular"), 
-    url("../font/DMSans-Regular.ttf");
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: local("DM Sans"), 
+     url("../font/DMSans-Regular.ttf");
   }
 
   @font-face {
     font-family: "DM Sans";
-    src: local("DMSans-Medium"), 
-    url("../font/DMSans-Medium.ttf");
     font-weight: 500px;
+    font-style: normal;
+    font-display: swap;
+    src: local("DM Sans"), 
+      url("../font/DMSans-Medium.ttf");
   }
 
   @font-face {
     font-family: "DM Sans";
-    src: local("DMSans-Boldc"), 
-    url("../font/DMSans-Bold.ttf");
     font-weight: 700px;
+    font-style: normal;
+    font-display: swap;
+    src: local("DM Sans"), 
+      url("../font/DMSans-Bold.ttf");
   }
 
   @font-face {
     font-family: "DM Sans";
-    src: local("DMSans-Italic"),
-      url("../font/DMSans-Italic.ttf");
     font-weight: 400px;
+    font-style: italic;
+    font-display: swap;
+    src: local("DM Sans"),
+      url("../font/DMSans-Italic.ttf");
   }
 
   @font-face {
     font-family: "DM Sans";
-    src: local("DMSans-MediumItalic"),
-      url("../font/DMSans-MediumItalic.ttf");
     font-weight: 500px;
+    font-style: italic;
+    font-display: swap;
+    src: local("DM Sans"),
+      url("../font/DMSans-MediumItalic.ttf");
   }
 
   @font-face {
     font-family: "DM Sans";
-    src: local("DMSans-BoldItalic"), 
-    url("../font/DMSans-BoldItalic.ttf");
     font-weight: 700px;
+    font-style: italic;
+    font-display: swap;
+    src: local("DM Sans"), 
+      url("../font/DMSans-BoldItalic.ttf");
   }
 
   
