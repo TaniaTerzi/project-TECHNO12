@@ -1,0 +1,2 @@
+!function(){document.querySelector(".title-text .login");var e=document.querySelector("form.login"),n=document.querySelector("label.login"),t=document.querySelector("label.signup"),o=document.querySelector("form .signup-link a");t.onclick=function(){e.style.marginLeft="-50%"},n.onclick=function(){e.style.marginLeft="0%"},o.onclick=function(){return t.click(),!1};var c=document.getElementById("myWrapper");window.onclick=function(e){e.target==c&&(c.style.display="none")}}();
+//# sourceMappingURL=index.c85f76cf.js.map

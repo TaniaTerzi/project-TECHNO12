@@ -1,0 +1,2 @@
+document.querySelector(".title-text .login");const e=document.querySelector("form.login"),t=document.querySelector("label.login"),n=document.querySelector("label.signup"),l=document.querySelector("form .signup-link a");n.onclick=()=>{e.style.marginLeft="-50%"},t.onclick=()=>{e.style.marginLeft="0%"},l.onclick=()=>(n.click(),!1);var o=document.getElementById("myWrapper");window.onclick=function(e){e.target==o&&(o.style.display="none")};
+//# sourceMappingURL=index.975ceed6.js.map
