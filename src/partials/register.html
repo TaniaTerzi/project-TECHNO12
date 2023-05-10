@@ -3,7 +3,7 @@
         <button class="close-button" type="button" onclick="closeForm()">
 
 
-    <button id="openBtn" class="open-button" onclick="openForm()">Sign in</button>
+    <!-- <button id="openBtn" class="open-button" onclick="openForm()">Sign in</button> -->
 
     <!-- <button class="open-button" onclick="openForm()">Sign in</button> -->
     <div class="wrapper" id="myWrapper">
@@ -68,12 +68,12 @@
     </div>
     <script>
         function openForm() {
-            document.getElementById("myForm").style.display = "block";
+            document.getElementById("myWrapper").style.display = "block";
 
         }
 
         function closeForm() {
-            document.getElementById("myForm").style.display = "none";
+            document.getElementById("myWrapper").style.display = "none";
         }
     </script>
     <script type="module" src="./js/registration.js"></script>
