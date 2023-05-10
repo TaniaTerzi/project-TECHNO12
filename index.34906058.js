@@ -1,0 +1,2 @@
+function e(){document.getElementById("myForm").style.display="none",document.querySelector(".reg-modal-backdrop").style.display="none"}const t=document.querySelector(".reg-modal-backdrop"),o=document.querySelector(".reg-close-button"),c=document.querySelector("#open-button");t.addEventListener("click",e),o.addEventListener("click",e),c.addEventListener("click",(function(){document.getElementById("myForm").style.display="block",document.querySelector(".reg-modal-backdrop").style.display="block"}));
+//# sourceMappingURL=index.34906058.js.map
