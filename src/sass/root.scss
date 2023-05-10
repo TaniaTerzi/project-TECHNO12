@@ -7,9 +7,11 @@
   --blue-color: #4f2ee8;
   --yellow-color: #eac645;
   --bg-shoppinglist: #D0D0D0;
+	--category: #4f2ee8;
 }
 
 .dark-mode {
+	--category: #eac645;
   --bg-color: #202024;
 	--header-color: #111111;
   --text-color: #ffffff;
