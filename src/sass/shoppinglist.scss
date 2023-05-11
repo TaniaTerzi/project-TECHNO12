@@ -254,6 +254,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  width: 808px;
 }
 
 .shopping-card-list {
@@ -290,15 +291,14 @@
 }
 
 .shopping-card-dump-icon {
-  width: 8px;
-  height: 8px;
+  width: 18px;
+  height: 18px;
 }
 
 .container-shopping-empty {
   width: 349px;
   height: 309px;
   margin: 140px auto;
-  border: solid 2px var(--blue-color);
 }
 
 .shopping-empty-text {

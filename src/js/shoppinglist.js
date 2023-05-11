@@ -1,25 +1,23 @@
-import AOS from 'aos';
 import Notiflix from 'notiflix';
+import photoAmazonx1 from '../images/amazon_x1.png'
+import photoAmazonx2 from '../images/amazon_x2.png'
+import photoAppleBookx1 from '../images/white_book_x1.png'
+import photoAppleBookx2 from '../images/white_book_x2.png'
+import photoBlackBookx1 from '../images/black_book_x1.png'
+import photoBlackBookx2 from '../images/black_book_x2.png'
+import photoBooksx1 from '../images/books_x1.png'
+import photoBooksx2 from '../images/books_x2.png'
+import svgSprite from '../images/svg/svg_sprite.svg#trash.svg'
 
-const shoppingListRef = document.querySelector('.shopping-link-order');
 const shoppingListContainerRef = document.querySelector('.container-markup');
+const LOCALSTORAGE_KEY = 'TEST';
 let shoppingListDumpBtnRef;
+let books;
 
-const LOCALSTORAGE_KEY = 'SHOPPINGLIST';
-
-console.log(shoppingListDumpBtnRef);
-
-// document.addEventListener('DOMContentLoaded', onShoppingList);
-// document.addEventListener('onloadstart', onShoppingList);
-shoppingListRef.addEventListener('click', onShoppingList);
-
-function onShoppingList(e) {
-  e.preventDefault();
+(function onShoppingList() {
   try {
-    if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+    if (localStorage.getItem(LOCALSTORAGE_KEY) && localStorage.getItem(LOCALSTORAGE_KEY).length > 2) {
       books = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-      console.log(books);
-      console.log(window);
       shoppingListContainerRef.innerHTML = '';
       shoppingListContainerRef.innerHTML = markupShoppingList(books);
       shoppingListDumpBtnRef = document.querySelector('.container-markup');
@@ -32,12 +30,27 @@ function onShoppingList(e) {
   } catch (error) {
     Notiflix.Notify.failure("Set state error: ", error.message);
   }
-}
+})();
 
-async function onDumpBtn(e) {
-  e.preventDefault();
-  console.log('onDumpBtn');
-  Notiflix.Notify.failure("I do not want to do this!");
+function onDumpBtn(e) {
+  // e.preventDefault();
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  books = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+  const filteredBooks = books.filter(book => book._id !== e.target.id);
+  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(filteredBooks));
+  books = filteredBooks;
+  if (books.length !== 0) {
+      shoppingListContainerRef.innerHTML = '';
+      shoppingListContainerRef.innerHTML = markupShoppingList(books);
+      shoppingListDumpBtnRef = document.querySelector('.container-markup');
+      shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
+    }
+  else {
+      shoppingListContainerRef.innerHTML = '';
+      shoppingListContainerRef.innerHTML = markupEmpty();
+    }
 }
 
 function markupShoppingList(books) {
@@ -55,25 +68,25 @@ function markupShoppingList(books) {
                   <li class="shopping-card-item">
                     <a target="_blank" rel="noopener noreferrer" href="${buy_links[0].url}">
                       <img class="shopping-card-pic" srcset="
-                                    ./images/amazon_x1.png 1x,
-                                    ./images/amazon_x2.png 2x
-                                  " src="./images/amazon_x1.png" alt="amazon" width="48" height="15" />
+                                    ${photoAmazonx1} 1x,
+                                    ${photoAmazonx2} 2x
+                                  " src="${photoAmazonx1}" alt="amazon" width="48" height="15" />
                     </a>
                   </li>
                   <li class="shopping-card-item">
                     <a target="_blank" rel="noopener noreferrer" href="${buy_links[1].url}">
                       <img class="shopping-card-pic" srcset="
-                                    ./images/white_book_x1.png 1x,
-                                    ./images/white_book_x2.png 2x
-                                  " src="./images/white_book_x1.png" alt="white_book" width="28" height="27" />
+                                    ${photoAppleBookx1} 1x,
+                                    ${photoAppleBookx2} 2x
+                                  " src="${photoAppleBookx1}" alt="white_book" width="28" height="27" />
                     </a>
                   </li>
                   <li class="shopping-card-item">
                     <a target="_blank" rel="noopener noreferrer" href="${buy_links[4].url}">
                       <img class="shopping-card-pic" srcset="
-                                    ./images/black_book_x1.png 1x,
-                                    ./images/black_book_x2.png 2x
-                                  " src="./images/black_book_x1.png" alt="black_book" width="32" height="30" />
+                                    ${photoBlackBookx1} 1x,
+                                    ${photoBlackBookx2} 2x
+                                  " src="${photoBlackBookx1}" alt="black_book" width="32" height="30" />
                     </a>
                   </li>
                 </ul>
@@ -81,10 +94,9 @@ function markupShoppingList(books) {
             </div>
             <button type="button" id=${_id} class="shopping-card-dump-btn">
               <svg class="shopping-card-dump-icon">
-                <use href="./images/svg/svg_sprite.svg#trash"></use>
+                <use href="${svgSprite}"></use>
               </svg>
             </button>
-            <p>${_id}</p>
           </div>
     `, '');
 }
@@ -95,8 +107,8 @@ function markupShoppingList(books) {
         <p class="shopping-empty-text">
           This page is empty, add some books and proceed to order.
         </p>
-        <img class="shopping-empty-img" srcset="./images/books_x1.png 1x, ./images/books_x2.png 2x"
-          src="./images/books_x1.png" alt="books" />
+        <img class="shopping-empty-img" srcset="${photoBooksx1} 1x, ${photoBooksx2} 2x"
+          src="${photoBooksx1} alt="books" />
       </div>
     `;
 }
