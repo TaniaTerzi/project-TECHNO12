@@ -1,25 +1,20 @@
-
 <div class="reg-modal-backdrop visually-hidden">
-		<div class="reg-form-popup" id="myForm">
-        <form action="/action_page.php" class="reg-form-register">
-            <button class="reg-close-button" type="button" >
-                <svg class="reg-close-icon" width="31" height="31">
-                    <use href="#"></use>
-                </svg>
-            </button>
-            <label for="name"></label>
-                <input class="reg-input-forms" type="text" placeholder="NAME" name="email" required>
-            <label for="email"></label>
-            <input class="reg-input-forms" type="text" placeholder="EMAIL" name="email" required>
-            <label for="psw"></label>
-            <input class="reg-input-forms" type="password" placeholder="PASSWORD" name="psw" required>
-            <button type="submit" class="reg-btn-submit">SIGN UP</button>
-            <div class="register-links">
-            <a class="reg-signup-btn" href="">SING UP</a>
-            <a class="reg-signin-btn" href="">SING IN</a>
-            </div>
-        </form>
-    </div>
+  <div class="reg-form-popup" id="myForm">
+    <form class="reg-form-register">
+      <button class="reg-close-button" type="button">
+        <svg class="reg-close-icon" width="31" height="31">
+          <use href="#"></use>
+        </svg>
+      </button>
+      <input class="reg-input-forms" type="text" placeholder="NAME" name="name" required>
+      <input class="reg-input-forms" type="text" placeholder="EMAIL" name="email" required>
+      <input class="reg-input-forms" type="password" placeholder="PASSWORD" name="password" required>
+      <button class="btn-queue-modal btn" id="login" type="button" onclick="signIn()">SIGN IN</button>
+      <button class="btn-queue-modal btn" id="register" type="button" onclick="signUp()">SIGN UP</button>
+      <div class="register-links">
+        <a class="reg-signup-btn" href="#" onclick="toggleForm('register')">SIGN UP</a>
+        <a class="reg-signin-btn" href="#" onclick="toggleForm('login')">SIGN IN</a>
+      </div>
+    </form>
+  </div>
 </div>
-
-
