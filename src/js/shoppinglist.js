@@ -103,5 +103,5 @@ function markupShoppingList(books) {
 
 import { slider, toggleSwitch } from './toggle.js';
 import { renderSupportMarkup } from './suppurt-slider.js';
-import { userLogin, userLogout } from './js/userbar.js';
-import { mobileMenu, openMenuBtn, closeMenuBtn } from './js/burger-menu.js';
+import { userLogin, userLogout } from './userbar.js';
+import { mobileMenu, openMenuBtn, closeMenuBtn } from './burger-menu.js';
