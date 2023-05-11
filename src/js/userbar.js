@@ -5,12 +5,12 @@ userLogin.addEventListener('click', e => {
 });
 
 const body = document.querySelector('.main');
-body.addEventListener('mouseover', onKeyPress);
+body.addEventListener('click', onKeyPress);
 function onKeyPress(event) {
   console.log(event);
   userLogout.classList.add('visually-hidden');
+  body.removeEventListener('click', onKeyPress);
 }
-onKeyPress();
 
 userLogout.addEventListener('click', e => {
   location.reload();
