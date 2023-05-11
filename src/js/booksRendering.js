@@ -146,6 +146,18 @@ async function handleLoadMore(e) {
         return;
       }
       lastWordForTitle();
+
+      const categoryButtons = document.querySelectorAll(
+        '.categories-list__button'
+      );
+
+      categoryButtons.forEach(button => {
+        if (button.textContent === category) {
+          button.classList.add('active-category');
+        } else {
+          button.classList.remove('active-category');
+        }
+      });
     }
     return;
   } catch (error) {

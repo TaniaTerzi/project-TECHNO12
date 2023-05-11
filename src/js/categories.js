@@ -34,7 +34,9 @@ function addEventListenerForBook(book) {
 }
 
 function makeMarkupCategory(books) {
-  return books.map(book => `
+  return books
+    .map(
+      book => `
         <li class="item-category-book" data-aos="flip-left" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-book-id="${book._id}">
           <a class="link-books-render" href="#" onclick="event.preventDefault()">
             <div class="card-book">
@@ -76,7 +78,7 @@ async function drawCategory(nameOfCategory) {
     'beforebegin',
     `<h2 class="title-category">${titleMarkup}</h2>`
   );
-
+  scrollToTitle();
   const bookCategoryEl = document.querySelectorAll('.categories-list__item');
   addEventListenerForBook(bookCategoryEl);
   allCategoriesBtn.classList.remove('active-category');
@@ -86,8 +88,6 @@ function markup(ev) {
   if (ev.target.nodeName !== 'BUTTON') {
     return;
   }
-
-
   clearSelectedCategories();
 
   if (ev.target === allCategoriesBtn) {
@@ -106,5 +106,9 @@ const clearSelectedCategories = () => {
     category.firstElementChild.classList.remove('active-category');
   }
 };
+
+function scrollToTitle() {
+  mainListEl.previousElementSibling.scrollIntoView({ behavior: 'smooth' });
+}
 
 export { createCategoryList };
