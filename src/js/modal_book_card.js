@@ -38,34 +38,71 @@ function onBookClick(event) {
   getBooks(id);
 }
 
+document.addEventListener('click', onBookClick);
+
 addbook.addEventListener('click', () => {
   changeBtn();
   addLocalStor();
 });
 
-document.addEventListener('click', onBookClick);
-
 async function getBookinModal(id){
   try {
     const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
-    // idbook = document.querySelector('.idbook');
-    // const id2 = idbook.textContent;
 
-    // if (id2 === response.data._id) {
-    //   localStorage.setItem('bookInfo', JSON.stringify(response.data));
+    idbook = document.querySelector('.idbook');
+    const id2 = idbook.textContent;
+    // const bookInfo = localStorage.getItem('bookInfo');
+
+    const bookInfo = JSON.parse(localStorage.getItem('bookInfo') || '[]');
+
+//     if (addbook.classList.contains('add')) {
+//   addbook.addEventListener('click', () => {
+//     const index = bookInfo.findIndex(book => id2 === book._id);
+//     if (index === -1) {
+//       bookInfo.push(JSON.stringify(response.data));
+//       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+      
+//     }
+//   })
+// } else if (addbook.classList.contains('remove')) {
+//   addbook.addEventListener('click', () => {
+//     const index = bookInfo.findIndex(book => id2 === book._id);
+//     if (index !== -1) {
+//       bookInfo.splice(index, 1);
+//       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+//     }
+//   })
+// }
+
+    // if (addbook.classList.contains('add')) {
+    //   addbook.addEventListener('click', () => {
+    //     bookInfo.push(response.data);
+    //     localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+    //   })
+    // } else if (addbook.classList.contains('remove')) {
+    //   addbook.addEventListener('click', () => {
+    //     const index = bookInfo.findIndex(book => id2 === response.data._id);
+    //     if (index !== -1) {
+    //       bookInfo.splice(index, 1);
+    //       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+    //     }
+    //   })
     // }
 
-    const bookInfo = localStorage.getItem('bookInfo');
-    // console.log(bookInfo);
-    // const bookdata = JSON.parse(localStorage.getItem('bookInfo'));
-
-    if (bookInfo === null) {
+    if (addbook.classList.contains('add')) {
+      addbook.addEventListener('click', () => {
       localStorage.setItem('bookInfo', JSON.stringify(response.data));
-    } else if (bookInfo !== null) {
-    localStorage.removeItem('bookInfo');
-    }
-    // else if (bookdata === bookdata) {
-    //   localStorage.setItem('bookInfo2', JSON.stringify(response.data));
+    })
+    } else if (addbook.classList.contains('remove')) {
+      addbook.addEventListener('click', () => {
+        localStorage.removeItem('bookInfo')
+      })
+  }  
+
+    // if (bookInfo === null) {
+    //   localStorage.setItem('bookInfo', JSON.stringify(response.data));
+    // } else if (bookInfo !== null) {
+    // localStorage.removeItem('bookInfo');
     // }
   }
   catch (error) {
@@ -82,13 +119,13 @@ function addLocalStor() {
 }
 
 function changeBtn() {
-  // localStorage.getItem('bookInfo');
-  // addLocalStor();
 
   if (addbook.textContent === 'add to shoping list') {
     setTimeout(() => {
       addbook.textContent = 'remove from the shopping list';
     }, 150);
+    addbook.classList.remove('add');
+    addbook.classList.add('remove');
     addbook.classList.add('addbook-change-size');
     modal.classList.add('modal-change-size');
     const text = document.createElement('p');
@@ -98,11 +135,12 @@ function changeBtn() {
     modal.appendChild(text);
   } else if (addbook.textContent === 'remove from the shopping list') {
     addbook.textContent = 'add to shoping list';
+    addbook.classList.add('add');
+    addbook.classList.remove('remove');
     addbook.classList.remove('addbook-change-size');
     modal.classList.remove('modal-change-size');
     const p = document.querySelector('.add-book-info');
     p.remove();
-    // localStorage.removeItem('bookInfo');
   }
 }
 
