@@ -1,4 +1,4 @@
-<div class="menu-container js-menu-container" id="mobile-menu">
+<div class="menu-container visually-hidden">
   <div class="container-header">
     <a class="header-logo" href="/src/index.html">
       <img
@@ -36,5 +36,33 @@
       <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
     </svg>
   </a>
+  <div class="userbar">
+    <a class="logged-user">
+      <img
+        class="user-avatar"
+        srcset="images/user_avatar_x1.png 1x, images/user_avatar_x2.png 2x"
+        src="images/user_avatar_x1.png"
+        alt="user avatar"
+        width="35"
+      />
+      Степан Бандера<svg
+        class="user-dropdown"
+        fill="white"
+        width="15"
+        height="15"
+      >
+        <use href="/src/images/svg/svg_sprite.svg#user-dropdown"></use>
+      </svg>
+    </a>
+    <div>
+      <a class="logout visually-hidden">
+        Log out
+        <svg class="arrow-right" width="20" height="20">
+          <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
+        </svg>
+      </a>
+      <div class="hugeback visually-hidden"></div>
+    </div>
+  </div>
   <div class="header-modal-image"></div>
 </div>
