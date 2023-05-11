@@ -201,7 +201,7 @@ border-color: #804b00;
 .container-shopping-card {
   position: relative;
   display: flex;
-  width: 996px;
+  max-width: 996px;
   height: 213px;
   margin: 20 auto 0;
   padding: 24px;
@@ -303,8 +303,8 @@ border-color: #804b00;
 }
 
 .shopping-card-dump-icon {
-  width: 48px;
-  height: 48px;
+  width: 8px;
+  height: 8px;
 }
 
 .container-shopping-empty {
@@ -323,7 +323,8 @@ border-color: #804b00;
   line-height: 1.33;
   text-align: center;
   letter-spacing: -0.02em;
-  color: rgba(0, 0, 0, 0.6);
+  color: --text-color;
+  opacity: 0.6;
 }
 
 .shopping-empty-img {
