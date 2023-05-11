@@ -13,7 +13,7 @@ function openForm() {
  signInBtn.style.display = 'none';
 }
 function closeForm() {
-backdrop.classList.toggle('visually-hidden');
+  backdrop.classList.toggle('visually-hidden');
 }
 backdrop.addEventListener('click', function (event) {
   if (event.target === backdrop) {
@@ -23,8 +23,8 @@ backdrop.addEventListener('click', function (event) {
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
-		closeForm();
-		return
+    closeForm();
+    return;
   }
 });
 
@@ -43,12 +43,12 @@ function toggleForm(action) {
 // Функція для переключення форми між SIGN IN та SIGN UP
 function toggleForm(action) {
   if (action === 'login') {
-    signUpBtn.style.display = 'none';
-    signInBtn.style.display = 'inline-block';
+    signUpBtn.style.display = 'inline-block';
+    signInBtn.style.display = 'none';
     form.setAttribute('action', 'signInWithEmailPassword()'); // Firebase функція для входу
   } else if (action === 'register') {
-    signInBtn.style.display = 'none';
-    signUpBtn.style.display = 'inline-block';
+    signInBtn.style.display = 'inline-block';
+    signUpBtn.style.display = 'none';
     form.setAttribute('action', 'createUserWithEmailPassword()'); // Firebase функція для реєстрації
   }
 }
@@ -56,12 +56,14 @@ function toggleForm(action) {
 function signIn() {
   const email = emailInput.value;
   const password = passwordInput.value;
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(userCredential => {
       // Залогінено користувача
       form.reset();
     })
-    .catch((error) => {
+    .catch(error => {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
@@ -100,5 +102,3 @@ signInLink.addEventListener('click', event => {
 
 closeButton.addEventListener('click', closeForm);
 openButton.addEventListener('click', openForm);
-
-
