@@ -3,17 +3,56 @@
     <form class="reg-form-register">
       <button class="reg-close-button" type="button">
         <svg class="reg-close-icon" width="31" height="31">
-          <use href="#"></use>
+          <use href="./images/svg/svg_sprite.svg#x_button_black.svg"></use>
         </svg>
       </button>
-      <input class="reg-input-forms" type="text" placeholder="NAME" name="name" required>
-      <input class="reg-input-forms" type="text" placeholder="EMAIL" name="email" required>
-      <input class="reg-input-forms" type="password" placeholder="PASSWORD" name="password" required>
-      <button class="btn-queue-modal btn" id="login" type="button" onclick="signIn()">SIGN IN</button>
-      <button class="btn-queue-modal btn" id="register" type="button" onclick="signUp()">SIGN UP</button>
+      <input
+        class="reg-input-forms"
+        type="text"
+        placeholder="NAME"
+        name="name"
+        pattern="[a-zA-Z]+"
+        required
+      />
+      <input
+        class="reg-input-forms"
+        type="email"
+        placeholder="EMAIL"
+        name="email"
+        required
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+      />
+      <input
+        class="reg-input-forms"
+        type="password"
+        placeholder="PASSWORD"
+        name="password"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      />
+      <button
+        class="btn-queue-modal btn"
+        id="login"
+        type="button"
+        onclick="signIn()"
+      >
+        SIGN IN
+      </button>
+      <button
+        class="btn-queue-modal btn"
+        id="register"
+        type="button"
+        onclick="signUp()"
+      >
+        SIGN UP
+      </button>
       <div class="register-links">
-        <a class="reg-signup-btn" href="#" onclick="toggleForm('register')">SIGN IN</a>
-        <a class="reg-signin-btn" href="#" onclick="toggleForm('login')">SIGN UP</a>
+        <a class="reg-signup-btn" href="#" onclick="toggleForm('register')"
+          >SIGN IN</a
+        >
+        <a class="reg-signin-btn" href="#" onclick="toggleForm('login')"
+          >SIGN UP</a
+        >
       </div>
     </form>
   </div>
