@@ -13,6 +13,11 @@
 .modal.hidden {
     transform: scale(0);
 }
+.idbook {
+    opacity: 0;
+    width: 0.5px;
+    height: 0.5px;
+}
 
 .backdrop_open {
     position: fixed;

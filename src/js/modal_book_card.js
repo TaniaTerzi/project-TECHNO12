@@ -9,6 +9,7 @@ const modalMarkup = document.querySelector('.modal-markup');
 const addbook = document.querySelector('.addbook');
 const backdrop = document.getElementById('backdrop');
 const closeModalBtn = document.querySelector('.modal-book-close');
+let idbook;
 
 async function getBooks(id) {
   try {
@@ -16,8 +17,6 @@ async function getBooks(id) {
       `https://books-backend.p.goit.global/books/${id}`
     );
     console.log(response.data);
-    // setItemInLocStor(data);
-    // localStorage.setItem('bookInfo', JSON.stringify(response.data));
     booksCard(response.data);
     modal.classList.remove('hidden');
     backdrop.classList.add('backdrop_open');
@@ -29,9 +28,6 @@ async function getBooks(id) {
   }
 }
 
-// function setItemInLocStor(value) {
-//     localStorage.setItem('bookInfo', JSON.stringify(value));
-// }
 
 function onBookClick(event) {
   const bookCard = event.target;
@@ -42,12 +38,52 @@ function onBookClick(event) {
   getBooks(id);
 }
 
-addbook.addEventListener('click', changeBtn);
+addbook.addEventListener('click', () => {
+  changeBtn();
+  addLocalStor();
+});
 
 document.addEventListener('click', onBookClick);
 
+async function getBookinModal(id){
+  try {
+    const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
+    // idbook = document.querySelector('.idbook');
+    // const id2 = idbook.textContent;
+
+    // if (id2 === response.data._id) {
+    //   localStorage.setItem('bookInfo', JSON.stringify(response.data));
+    // }
+
+    const bookInfo = localStorage.getItem('bookInfo');
+    // console.log(bookInfo);
+    // const bookdata = JSON.parse(localStorage.getItem('bookInfo'));
+
+    if (bookInfo === null) {
+      localStorage.setItem('bookInfo', JSON.stringify(response.data));
+    } else if (bookInfo !== null) {
+    localStorage.removeItem('bookInfo');
+    }
+    // else if (bookdata === bookdata) {
+    //   localStorage.setItem('bookInfo2', JSON.stringify(response.data));
+    // }
+  }
+  catch (error) {
+    console.log(error);
+  };
+}
+
+
+function addLocalStor() {
+  idbook = document.querySelector('.idbook');
+  const id = idbook.textContent;
+
+  getBookinModal(id);
+}
+
 function changeBtn() {
-  // const bookInfo = JSON.parse(localStorage.getItem('bookInfo'));
+  // localStorage.getItem('bookInfo');
+  // addLocalStor();
 
   if (addbook.textContent === 'add to shoping list') {
     setTimeout(() => {
@@ -60,12 +96,6 @@ function changeBtn() {
       'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
     text.classList.add('add-book-info');
     modal.appendChild(text);
-    // localStorage.setItem('bookInfo', JSON.stringify({
-    //   ...bookInfo,
-    //   isInShoppingList: true,
-    // }));
-    onBookClick();
-    getBooks();
   } else if (addbook.textContent === 'remove from the shopping list') {
     addbook.textContent = 'add to shoping list';
     addbook.classList.remove('addbook-change-size');
@@ -111,6 +141,7 @@ function booksCard(book) {
     <h2 class="book-title">${book.title}</h2>
     <p class="book-author">${book.author}</p>
     <p class="book-descr">${book.description}</p>
+    <p class="idbook">${book._id}</p>
     <ul class="online-shops-list">
     <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[0].url}"><img src="${photoAmazon}" width="62px" heigth="19px"/></a></li>
     <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[1].url}"><img src="${photoAppleBook}" width="32px" heigth="32px"/></a></li>
