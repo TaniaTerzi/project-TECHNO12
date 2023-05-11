@@ -36,7 +36,14 @@ body {
 
 @media screen and (max-width: 1199px) {
   .main {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  section {
+    width: 768px;
   }
 }
 
@@ -44,4 +51,7 @@ body {
   .main {
     display: flex;
   }
+  section {
+    width: 1200px;
   }
+}
