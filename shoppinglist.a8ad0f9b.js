@@ -1,2 +1,0 @@
-!function(){var e=document.querySelector(".reg-modal-backdrop"),n=document.querySelector(".reg-close-button"),t=document.querySelector("#header-signup-link");document.getElementById("myForm");function c(){e.classList.toggle("visually-hidden")}e.addEventListener("click",(function(n){n.target===e&&c()})),document.addEventListener("keydown",(function(e){"Escape"!==e.key||c()})),n.addEventListener("click",c),t.addEventListener("click",(function(){e.classList.remove("visually-hidden")}))}();
-//# sourceMappingURL=shoppinglist.a8ad0f9b.js.map

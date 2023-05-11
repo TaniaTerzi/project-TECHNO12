@@ -1,2 +1,0 @@
-const e=document.querySelector(".reg-modal-backdrop"),t=document.querySelector(".reg-close-button"),n=document.querySelector("#header-signup-link");document.getElementById("myForm");function c(){e.classList.toggle("visually-hidden")}e.addEventListener("click",(function(t){t.target===e&&c()})),document.addEventListener("keydown",(function(e){"Escape"!==e.key||c()})),t.addEventListener("click",c),n.addEventListener("click",(function(){e.classList.remove("visually-hidden")}));
-//# sourceMappingURL=shoppinglist.af47befb.js.map
