@@ -2,6 +2,7 @@
 import { slider, toggleSwitch } from './js/toggle.js';
 import { scrollButton } from './js/scroll-up.js';
 import { userLogin, userLogout } from './js/userbar.js';
+import { mobileMenu, openMenuBtn, closeMenuBtn } from './js/burger-menu.js';
 import { renderSupportMarkup } from './js/suppurt-slider.js';
 import {
   renderingBooksCategories,
