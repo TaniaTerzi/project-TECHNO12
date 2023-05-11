@@ -10,7 +10,7 @@ import photoBooksx2 from '../images/books_x2.png'
 import svgSprite from '../images/svg/svg_sprite.svg#trash.svg'
 
 const shoppingListContainerRef = document.querySelector('.container-markup');
-const LOCALSTORAGE_KEY = 'bookinfo';
+const LOCALSTORAGE_KEY = 'bookInfo';
 let shoppingListDumpBtnRef;
 let books;
 
