@@ -131,6 +131,7 @@ text-transform: uppercase;
 		
 		.shopping-list-link:hover{
 	   border-color: var(--yellow-color);
+     padding: 8px 16px;
 		 transition: background-color,  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -142,3 +143,10 @@ text-transform: uppercase;
  color: #804b00;
  transition: background-color,  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+///terzi
+.busket-shopping-list {
+  margin-left: 7.33px;
+}
+
+
