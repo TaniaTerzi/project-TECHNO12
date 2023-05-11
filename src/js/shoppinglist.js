@@ -1,13 +1,13 @@
 import Notiflix from 'notiflix';
-import photoAmazonx1 from '../images/amazon_x1.png'
-import photoAmazonx2 from '../images/amazon_x2.png'
-import photoAppleBookx1 from '../images/white_book_x1.png'
-import photoAppleBookx2 from '../images/white_book_x2.png'
-import photoBlackBookx1 from '../images/black_book_x1.png'
-import photoBlackBookx2 from '../images/black_book_x2.png'
-import photoBooksx1 from '../images/books_x1.png'
-import photoBooksx2 from '../images/books_x2.png'
-import svgSprite from '../images/svg/svg_sprite.svg#trash.svg'
+import photoAmazonx1 from '../images/amazon_x1.png';
+import photoAmazonx2 from '../images/amazon_x2.png';
+import photoAppleBookx1 from '../images/white_book_x1.png';
+import photoAppleBookx2 from '../images/white_book_x2.png';
+import photoBlackBookx1 from '../images/black_book_x1.png';
+import photoBlackBookx2 from '../images/black_book_x2.png';
+import photoBooksx1 from '../images/books_x1.png';
+import photoBooksx2 from '../images/books_x2.png';
+import svgSprite from '../images/svg/svg_sprite.svg#trash.svg';
 
 const shoppingListContainerRef = document.querySelector('.container-markup');
 const LOCALSTORAGE_KEY = 'bookInfo';
@@ -16,19 +16,21 @@ let books;
 
 (function onShoppingList() {
   try {
-    if (localStorage.getItem(LOCALSTORAGE_KEY) && localStorage.getItem(LOCALSTORAGE_KEY).length > 2) {
+    if (
+      localStorage.getItem(LOCALSTORAGE_KEY) &&
+      localStorage.getItem(LOCALSTORAGE_KEY).length > 2
+    ) {
       books = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
       shoppingListContainerRef.innerHTML = '';
       shoppingListContainerRef.innerHTML = markupShoppingList(books);
       shoppingListDumpBtnRef = document.querySelector('.container-markup');
       shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
-    }
-    else {
+    } else {
       shoppingListContainerRef.innerHTML = '';
       shoppingListContainerRef.innerHTML = markupEmpty();
     }
   } catch (error) {
-    Notiflix.Notify.failure("Set state error: ", error.message);
+    Notiflix.Notify.failure('Set state error: ', error.message);
   }
 })();
 
@@ -42,20 +44,24 @@ function onDumpBtn(e) {
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(filteredBooks));
   books = filteredBooks;
   if (books.length !== 0) {
-      shoppingListContainerRef.innerHTML = '';
-      shoppingListContainerRef.innerHTML = markupShoppingList(books);
-      shoppingListDumpBtnRef = document.querySelector('.container-markup');
-      shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
-    }
-  else {
-      shoppingListContainerRef.innerHTML = '';
-      shoppingListContainerRef.innerHTML = markupEmpty();
-    }
+    shoppingListContainerRef.innerHTML = '';
+    shoppingListContainerRef.innerHTML = markupShoppingList(books);
+    shoppingListDumpBtnRef = document.querySelector('.container-markup');
+    shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
+  } else {
+    shoppingListContainerRef.innerHTML = '';
+    shoppingListContainerRef.innerHTML = markupEmpty();
+  }
 }
 
 function markupShoppingList(books) {
-  return books.reduce((acc, { book_image, title, list_name, description, author, buy_links, _id }) =>
-    acc + `
+  return books.reduce(
+    (
+      acc,
+      { book_image, title, list_name, description, author, buy_links, _id }
+    ) =>
+      acc +
+      `
       <div class="container-shopping-card">
             <img class="shopping-card-img" src="${book_image}" alt="Without title">
             <div>
@@ -98,10 +104,12 @@ function markupShoppingList(books) {
               </svg>
             </button>
           </div>
-    `, '');
+    `,
+    ''
+  );
 }
 
- function markupEmpty() {
+function markupEmpty() {
   return `
       <div class="container-shopping-empty">
         <p class="shopping-empty-text">
@@ -115,5 +123,5 @@ function markupShoppingList(books) {
 
 import { slider, toggleSwitch } from './toggle.js';
 import { renderSupportMarkup } from './suppurt-slider.js';
-// import { userLogin, userLogout } from './userbar.js';
-// import { mobileMenu, openMenuBtn, closeMenuBtn } from './burger-menu.js';
+import { userLogin, userLogout, hugeback } from './userbar.js';
+import { mobileMenu, openMenuBtn, closeMenuBtn } from './burger-menu.js';

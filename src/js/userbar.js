@@ -4,7 +4,7 @@ userLogin.addEventListener('click', e => {
   userLogout.classList.remove('visually-hidden');
 });
 
-const hugeback = document.querySelector('.hugeback');
+export const hugeback = document.querySelector('.hugeback');
 userLogin.addEventListener('click', e => {
   userLogout.classList.remove('visually-hidden');
   hugeback.classList.remove('visually-hidden');
