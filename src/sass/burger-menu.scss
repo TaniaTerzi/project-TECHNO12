@@ -22,6 +22,12 @@
 // }
 
 @media screen and (max-width: 767px) {
+    .absolute {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
     .logged-user {
         display: none;
     }
@@ -42,6 +48,53 @@
         box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
         z-index: 999;
 
+    }
+
+    .logged-user1 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 184px;
+        padding: 5px 5px;
+        text-decoration: none;
+        background: transparent;
+        border: none;
+        border-radius: 18px;
+
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.04em;
+        color: #ffffff;
+    }
+
+    .logout1 {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 184px;
+        padding: 12px 14px;
+        text-decoration: none;
+        background: white;
+        border: 1.5px solid #111111;
+        border-radius: 18px;
+
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.04em;
+        color: #000000;
+    }
+
+    .hugeback1 {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 100px;
+        left: 0;
+
+        opacity: 0;
+        z-index: 990;
     }
 }
 
@@ -89,14 +142,36 @@
     border: none;
 }
 
-// .header-modal-image {
-//     background-image: url("/src/images/Group 6.png");
-//     width: 100%;
-//     height: 700px;
-//     position: absolute;
-//     z-index: 2;
-//     bottom: 0;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-color: transparent;
-// }
+.log-out {
+    position: absolute;
+    top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 118px;
+    padding: 12px 14px;
+    margin-top: 40px;
+    margin-left: 20px;
+    text-decoration: none;
+    background: #FFFFFF;
+    border: 1.5px solid #111111;
+    border-radius: 18px;
+
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #111111;
+    z-index: 999;
+}
+
+.header-modal-image {
+    background-image: url("/src/images/Group 6.png");
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    z-index: 2;
+    bottom: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
