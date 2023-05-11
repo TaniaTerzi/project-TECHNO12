@@ -10,7 +10,7 @@ import photoBooksx2 from '../images/books_x2.png'
 import svgSprite from '../images/svg/svg_sprite.svg#trash.svg'
 
 const shoppingListContainerRef = document.querySelector('.container-markup');
-const LOCALSTORAGE_KEY = 'TEST';
+const LOCALSTORAGE_KEY = 'bookinfo';
 let shoppingListDumpBtnRef;
 let books;
 
@@ -115,5 +115,5 @@ function markupShoppingList(books) {
 
 import { slider, toggleSwitch } from './toggle.js';
 import { renderSupportMarkup } from './suppurt-slider.js';
-import { userLogin, userLogout } from './userbar.js';
-import { mobileMenu, openMenuBtn, closeMenuBtn } from './burger-menu.js';
+// import { userLogin, userLogout } from './userbar.js';
+// import { mobileMenu, openMenuBtn, closeMenuBtn } from './burger-menu.js';
