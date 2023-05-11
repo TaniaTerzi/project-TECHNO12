@@ -1,0 +1,109 @@
+// .burger-container {
+//     height: 812px;
+//     max-width: 375px;
+//     background-color: #111111;
+// }
+
+// .sign-up-link-burger {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     width: 184px;
+//     padding: 12px 14px;
+//     text-decoration: none;
+//     background: var(--blue-color);
+//     border: 1.5px solid #111111;
+//     border-radius: 18px;
+
+//     font-weight: 500;
+//     line-height: 18px;
+//     letter-spacing: -0.04em;
+//     color: #ffffff;
+// }
+
+@media screen and (max-width: 767px) {
+    .logged-user {
+        display: none;
+    }
+
+    .sign-up-link {
+        display: none;
+    }
+}
+
+.menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%,
+            #4f2ee8 18.03%,
+            #ffffff 100%);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+    z-index: 999;
+    overflow-y: scroll;
+
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+}
+
+.menu-container.is-open {
+    transform: translateX(0);
+}
+
+.menu-toggle {
+    top: 40px;
+    right: 40px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+}
+
+.sign-up-link1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 184px;
+    padding: 12px 14px;
+    margin-top: 40px;
+    margin-left: 20px;
+    text-decoration: none;
+    background: var(--blue-color);
+    border: 1.5px solid #111111;
+    border-radius: 18px;
+
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+}
+
+.unauthorized-header {
+    width: 184px;
+    border-radius: 18px;
+}
+
+.x-button-black {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+}
+
+.header-modal-image {
+    background-image: url("/src/images/Group 6.png");
+    width: 100%;
+    height: 700px;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}

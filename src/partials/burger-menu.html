@@ -1,26 +1,40 @@
-<div class="burger-container js-menu-container" id="mobile-menu">
+<div class="menu-container js-menu-container" id="mobile-menu">
+  <div class="container-header">
+    <a class="header-logo" href="/src/index.html">
+      <img
+        class="logo-img"
+        src="../src/images/logo.png"
+        alt="logo"
+        width="25"
+        height="25"
+      />
+      <p>Bookshelf</p>
+    </a>
+
+    <div class="right-header">
+      <div class="slider">
+        <span class="thumb">
+          <span class="knob">
+            <span class="central-knob"> </span>
+          </span>
+        </span>
+      </div>
+    </div>
+    <button class="menu-toggle js-close-menu">
+      <svg class="x-button-black">
+        <use href="./images/svg/svg_sprite.svg#x-button-black"></use>
+      </svg>
+    </button>
+  </div>
 
   <a
-        id="signup-link-"
-        class="sign-up-link-burger"
-        href=""
-        onclick="openForm(); return false;"
-        >Sign up<svg class="arrow-right" width="20" height="20">
-          <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
-        </svg>
-      </a>
-
+    id="signup-link1"
+    class="sign-up-link1"
+    href=""
+    onclick="openForm(); return false;"
+    >Sign up<svg class="arrow-right" width="20" height="20">
+      <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
+    </svg>
+  </a>
+  <div class="header-modal-image"></div>
 </div>
-
-<!-- <script
-  defer
-  src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
-  integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
-  crossorigin="anonymous"
-></script>
-<script defer src="js/mobile-menu.js"></script>
-
-<script src="./js/modal.js"></script>
-<script defer src="./js/menu.js"></script> -->
-</body>
-</html>
