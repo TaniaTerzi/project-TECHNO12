@@ -34,9 +34,7 @@ function addEventListenerForBook(book) {
 }
 
 function makeMarkupCategory(books) {
-  return books
-    .map(
-      book => `
+  return books.map(book => `
         <li class="item-category-book" data-aos="flip-left" data-aos-anchor-placement="top-bottom" data-aos-once="true" data-book-id="${book._id}">
           <a class="link-books-render" href="#" onclick="event.preventDefault()">
             <div class="card-book">
@@ -89,43 +87,14 @@ function markup(ev) {
     return;
   }
 
+
   clearSelectedCategories();
 
   if (ev.target === allCategoriesBtn) {
-    allCategoriesBtn.classList.add('active-category');
-    const showAllCategories = async () => {
-      try {
-        const categoriesList = await fetchBooks.getCategoriesList();
-        const categoriesMarkup = categoriesList
-          .map(
-            category => `
-              <div class='categories-block'>
-                <h2 class='title-category'>${category.list_name}</h2>
-                <ul class='categories-list'>
-                  ${makeMarkupCategory(category.books)}
-                </ul>
-              </div>
-            `
-          )
-          .join('');
-
-        if (mainTitle !== null) {
-          mainTitle.textContent = nameOfCategory;
-          mainListEl.innerHTML = categoriesMarkup;
-        }
-
-        const bookCategoryEl = document.querySelectorAll(
-          '.categories-list__item'
-        );
-        addEventListenerForBook(bookCategoryEl);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    showAllCategories();
-
+    location.reload();
     return;
   }
+
   title = ev.target.textContent;
   drawCategory(title);
   ev.target.classList.add('active-category');
