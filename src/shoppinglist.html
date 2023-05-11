@@ -39,10 +39,8 @@
           </div>
 
           <a
-            id="signup-link"
-            class="sign-up-link"
-            href=""
-            onclick="openForm(); return false;"
+             id="header-signup-link"
+        class="sign-up-link"
             >Sign up<svg class="arrow-right" width="20" height="20">
               <use href="/src/images/svg/svg_sprite.svg#right-arrow"></use>
             </svg>
@@ -183,7 +181,10 @@
       </div>
     </main>
 
+    <include src="./partials/register.html"></include>
     <include src="./partials/scroll-up.html"></include>
+
+    <script type="module" src="./js/open_form.js"></script>
     <script type="module" src="./js/shoppinglist.js"></script>
   </body>
 </html>
