@@ -1,0 +1,38 @@
+@mixin tippoint($tip) {
+    @if $tip ==mobil {
+      @media screen and (min-width: 428px) and (max-width: 576px) {
+        @content;
+      }
+    }
+  
+    @if $tip ==tablet {
+      @media screen and (min-width: 577px) and (max-width: 891px) {
+        @content;
+      }
+    }
+  
+    @if $tip ==tablet-2 {
+      @media screen and (min-width: 765px) and (max-width: 891px) {
+        @content;
+      }
+    }
+  
+    @if $tip ==tablet-3 {
+      @media screen and (min-width: 640px) and (max-width: 891px) {
+        @content;
+      }
+    }
+  
+    @if $tip ==desktop {
+      @media screen and (min-width: 892px) {
+        @content;
+      }
+    }
+  }
+  @mixin min-device-pixel() {
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
