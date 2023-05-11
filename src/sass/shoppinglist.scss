@@ -1,3 +1,5 @@
+@import './registration.scss';
+
 .logo-img {
   width: 24px;
   margin-right: 8px;
@@ -68,7 +70,7 @@
   margin-left: auto;
 }
 
-.sign-up-link {
+.header-sign-up-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,27 +86,7 @@
   letter-spacing: -0.04em;
   color: #ffffff;
 }
-.unauthorized-header {
-  width: 184px;
-  border-radius: 18px;
-}
 
-.sign-up-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 184px;
-  padding: 12px 14px;
-  text-decoration: none;
-  background: var(--blue-color);
-  border: 1.5px solid #111111;
-  border-radius: 18px;
-
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-  color: #ffffff;
-}
 .unauthorized-header {
   width: 184px;
   border-radius: 18px;
@@ -206,7 +188,7 @@
 .container-shopping-card {
   position: relative;
   display: flex;
-  width: 996px;
+  max-width: 996px;
   height: 213px;
   margin: 20 auto 0;
   padding: 24px;
@@ -308,8 +290,8 @@
 }
 
 .shopping-card-dump-icon {
-  width: 48px;
-  height: 48px;
+  width: 8px;
+  height: 8px;
 }
 
 .container-shopping-empty {
@@ -328,7 +310,8 @@
   line-height: 1.33;
   text-align: center;
   letter-spacing: -0.02em;
-  color: rgba(0, 0, 0, 0.6);
+  color: --text-color;
+  opacity: 0.6;
 }
 
 .shopping-empty-img {

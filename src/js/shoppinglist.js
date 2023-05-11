@@ -1,23 +1,29 @@
+import AOS from 'aos';
 import Notiflix from 'notiflix';
 
 const shoppingListRef = document.querySelector('.shopping-link-order');
 const shoppingListContainerRef = document.querySelector('.container-markup');
-const shoppingListDumpBtnRef = document.querySelector('.shopping-card-dump-btn');
+let shoppingListDumpBtnRef;
 
 const LOCALSTORAGE_KEY = 'SHOPPINGLIST';
 
-shoppingListRef.addEventListener('click', onShoppingList);
-shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
+console.log(shoppingListDumpBtnRef);
 
-export function onShoppingList(e) {
+// document.addEventListener('DOMContentLoaded', onShoppingList);
+// document.addEventListener('onloadstart', onShoppingList);
+shoppingListRef.addEventListener('click', onShoppingList);
+
+function onShoppingList(e) {
   e.preventDefault();
   try {
     if (localStorage.getItem(LOCALSTORAGE_KEY)) {
       books = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
       console.log(books);
-      console.log(document);
+      console.log(window);
       shoppingListContainerRef.innerHTML = '';
       shoppingListContainerRef.innerHTML = markupShoppingList(books);
+      shoppingListDumpBtnRef = document.querySelector('.container-markup');
+      shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
     }
     else {
       shoppingListContainerRef.innerHTML = '';
@@ -28,13 +34,14 @@ export function onShoppingList(e) {
   }
 }
 
-function onDumpBtn(e) {
+async function onDumpBtn(e) {
   e.preventDefault();
+  console.log('onDumpBtn');
   Notiflix.Notify.failure("I do not want to do this!");
 }
 
 function markupShoppingList(books) {
-  return books.reduce((acc, { book_image, title, list_name, description, author, buy_links }) =>
+  return books.reduce((acc, { book_image, title, list_name, description, author, buy_links, _id }) =>
     acc + `
       <div class="container-shopping-card">
             <img class="shopping-card-img" src="${book_image}" alt="Without title">
@@ -72,11 +79,12 @@ function markupShoppingList(books) {
                 </ul>
               </div>
             </div>
-            <button type="button" class="shopping-card-dump-btn">
+            <button type="button" id=${_id} class="shopping-card-dump-btn">
               <svg class="shopping-card-dump-icon">
                 <use href="./images/svg/svg_sprite.svg#trash"></use>
               </svg>
             </button>
+            <p>${_id}</p>
           </div>
     `, '');
 }
