@@ -1,2 +1,0 @@
-!function(){function e(){document.getElementById("myForm").style.display="none",document.querySelector(".reg-modal-backdrop").style.display="none"}var t=document.querySelector(".reg-modal-backdrop"),o=document.querySelector(".reg-close-button"),n=document.querySelector("#open-button");t.addEventListener("click",e),o.addEventListener("click",e),n.addEventListener("click",(function(){document.getElementById("myForm").style.display="block",document.querySelector(".reg-modal-backdrop").style.display="block"}))}();
-//# sourceMappingURL=index.73273dae.js.map
