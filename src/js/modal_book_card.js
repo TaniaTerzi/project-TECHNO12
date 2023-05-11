@@ -54,7 +54,7 @@ async function getBookinModal(id){
     // const bookInfo = localStorage.getItem('bookInfo');
 
     const bookInfo = JSON.parse(localStorage.getItem('bookInfo') || '[]');
-
+    console.log(bookInfo);
 //     if (addbook.classList.contains('add')) {
 //   addbook.addEventListener('click', () => {
 //     const index = bookInfo.findIndex(book => id2 === book._id);
@@ -89,15 +89,23 @@ async function getBookinModal(id){
     //   })
     // }
 
-    if (addbook.classList.contains('add')) {
+    console.log(response.data);
+
+    if (addbook.classList.contains('add'))
+    {
       addbook.addEventListener('click', () => {
-      localStorage.setItem('bookInfo', JSON.stringify(response.data));
-    })
-    } else if (addbook.classList.contains('remove')) {
-      addbook.addEventListener('click', () => {
-        localStorage.removeItem('bookInfo')
+        let storageBooks = JSON.parse(localStorage.getItem('bookInfo'));
+        console.log('Has add');
+        storageBooks.push(response.data);
+        localStorage.setItem('bookInfo', JSON.stringify(storageBooks));
       })
-  }  
+    } else if (addbook.classList.contains('remove'))
+    {
+      console.log('Has remove');
+      // addbook.addEventListener('click', () => {
+       // localStorage.removeItem('bookInfo')
+      // })
+    }  
 
     // if (bookInfo === null) {
     //   localStorage.setItem('bookInfo', JSON.stringify(response.data));

@@ -10,7 +10,7 @@ import photoBooksx2 from '../images/books_x2.png'
 
 const shoppingListContainerRef = document.querySelector('.container-markup');
 const paginationContainerRef = document.querySelector('.container-pagination');
-const LOCALSTORAGE_KEY = 'SHOPPINGLIST';
+const LOCALSTORAGE_KEY = 'bookInfo';
 let shoppingListDumpBtnRef;
 let books;
 
