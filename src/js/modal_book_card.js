@@ -11,6 +11,8 @@ const backdrop = document.getElementById('backdrop');
 const closeModalBtn = document.querySelector('.modal-book-close');
 let idbook;
 
+let storageBooks = JSON.parse(localStorage.getItem('bookInfo')) || []
+
 async function getBooks(id) {
   try {
     const response = await axios.get(
@@ -45,7 +47,7 @@ addbook.addEventListener('click', () => {
   addLocalStor();
 });
 
-async function getBookinModal(id){
+async function getBookinModal(id) {
   try {
     const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
 
@@ -54,64 +56,23 @@ async function getBookinModal(id){
     // const bookInfo = localStorage.getItem('bookInfo');
 
     const bookInfo = JSON.parse(localStorage.getItem('bookInfo') || '[]');
-    console.log(bookInfo);
-//     if (addbook.classList.contains('add')) {
-//   addbook.addEventListener('click', () => {
-//     const index = bookInfo.findIndex(book => id2 === book._id);
-//     if (index === -1) {
-//       bookInfo.push(JSON.stringify(response.data));
-//       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
-      
-//     }
-//   })
-// } else if (addbook.classList.contains('remove')) {
-//   addbook.addEventListener('click', () => {
-//     const index = bookInfo.findIndex(book => id2 === book._id);
-//     if (index !== -1) {
-//       bookInfo.splice(index, 1);
-//       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
-//     }
-//   })
-// }
+    // console.log(bookInfo);
 
-    // if (addbook.classList.contains('add')) {
-    //   addbook.addEventListener('click', () => {
-    //     bookInfo.push(response.data);
-    //     localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
-    //   })
-    // } else if (addbook.classList.contains('remove')) {
-    //   addbook.addEventListener('click', () => {
-    //     const index = bookInfo.findIndex(book => id2 === response.data._id);
-    //     if (index !== -1) {
-    //       bookInfo.splice(index, 1);
-    //       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
-    //     }
-    //   })
-    // }
-
-    console.log(response.data);
-
-    if (addbook.classList.contains('add'))
-    {
-      addbook.addEventListener('click', () => {
-        let storageBooks = JSON.parse(localStorage.getItem('bookInfo'));
-        console.log('Has add');
-        storageBooks.push(response.data);
-        localStorage.setItem('bookInfo', JSON.stringify(storageBooks));
-      })
-    } else if (addbook.classList.contains('remove'))
-    {
-      console.log('Has remove');
-      // addbook.addEventListener('click', () => {
-       // localStorage.removeItem('bookInfo')
-      // })
-    }  
-
-    // if (bookInfo === null) {
-    //   localStorage.setItem('bookInfo', JSON.stringify(response.data));
-    // } else if (bookInfo !== null) {
-    // localStorage.removeItem('bookInfo');
-    // }
+    addbook.addEventListener('click', () => {
+   
+      const index = bookInfo.findIndex(book => id === book._id);
+      localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+    if (addbook.classList.contains('remove')) {
+        if (index === -1) {
+          bookInfo.push(response.data);
+          localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
+        }
+      } else if (addbook.classList.contains('add')) {
+        if (index !== -1)
+          bookInfo.splice(index, 1)
+        localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
+      }
+    })
   }
   catch (error) {
     console.log(error);
