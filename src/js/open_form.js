@@ -1,3 +1,5 @@
+
+
 const backdrop = document.querySelector('.reg-modal-backdrop');
 const closeButton = document.querySelector('.reg-close-button');
 const openButton = document.querySelector('#header-signup-link');
@@ -9,8 +11,8 @@ const signInBtn = form.querySelector('#login');
 const signUpBtn = form.querySelector('#register');
 
 function openForm() {
-	backdrop.classList.remove('visually-hidden');
- signInBtn.style.display = 'none';
+  backdrop.classList.remove('visually-hidden');
+  signInBtn.style.display = 'none';
 }
 function closeForm() {
   backdrop.classList.toggle('visually-hidden');
@@ -27,18 +29,6 @@ document.addEventListener('keydown', function (event) {
     return;
   }
 });
-
-function toggleForm(action) {
-  if (action === 'login') {
-    signUpBtn.style.display = 'inline-block';
-    signInBtn.style.display = 'none';
-    form.setAttribute('action', 'signInWithEmailPassword()'); // Firebase функція для входу
-  } else if (action === 'register') {
-    signInBtn.style.display = 'inline-block';
-    signUpBtn.style.display = 'none';
-    form.setAttribute('action', 'createUserWithEmailPassword()'); // Firebase функція для реєстрації
-  }
-}
 
 // Функція для переключення форми між SIGN IN та SIGN UP
 function toggleForm(action) {
@@ -102,3 +92,5 @@ signInLink.addEventListener('click', event => {
 
 closeButton.addEventListener('click', closeForm);
 openButton.addEventListener('click', openForm);
+
+export { signIn, signUp };
