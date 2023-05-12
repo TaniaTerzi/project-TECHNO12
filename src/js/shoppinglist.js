@@ -12,13 +12,14 @@ const shoppingListContainerRef = document.querySelector('.container-markup');
 const paginationContainerRef = document.querySelector('.container-pagination');
 const LOCALSTORAGE_KEY = 'bookInfo';
 let shoppingListDumpBtnRef;
+let shoppingListPaginationBtnRef;
 let books;
 
 (function onShoppingList() {
   try {
     if (localStorage.getItem(LOCALSTORAGE_KEY) && localStorage.getItem(LOCALSTORAGE_KEY).length > 2) {
       books = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-      renderShoppingList(books);
+      renderShoppingList(books,1);
     }
     else {
       renderEmpty();
@@ -46,9 +47,23 @@ function onDumpBtn(e) {
   }
 }
 
-function renderShoppingList(books) {
+function onPaginationBtn(e) {
+  e.preventDefault();
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+
+  console.dir(e.target.id);
+  console.log(books);
+  // e.target.classlist.add('pagination-active-btn');
+  renderShoppingList(books, e.target.id);
+
+}
+
+
+function renderShoppingList(books,page) {
   let quantityOfBooksPerPage = 0;
-  let currentPage = 1;
+  currentPage = page;
   let offset = 0;
 
   let quantityOfButtons = 0;
@@ -74,10 +89,13 @@ function renderShoppingList(books) {
   shoppingListContainerRef.innerHTML = markupShoppingList(books.slice(offset, offset + quantityOfBooksPerPage));
   paginationContainerRef.innerHTML = '';
   if (quantityOfButtons > 1) {
-      paginationContainerRef.innerHTML = markupPagination(quantityOfButtons);
+    paginationContainerRef.innerHTML = markupPagination(quantityOfButtons);
+    
   } 
   shoppingListDumpBtnRef = document.querySelector('.container-markup');
   shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
+  shoppingListPaginationBtnRef = document.querySelector('.container-pagination');
+  shoppingListPaginationBtnRef.addEventListener('click',onPaginationBtn);
 }
 
 function renderEmpty() {
