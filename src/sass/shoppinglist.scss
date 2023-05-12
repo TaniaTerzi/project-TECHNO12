@@ -312,6 +312,32 @@
   margin: 20 auto 0;
 }
 
+.container-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 996px;
+  height: 124px;
+  margin: 0 auto 0;
+}
+
+.pagination-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.33;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: solid 3px var(--text-color);
+}
+
+.pagination-btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+
 /* Kirill styles fix */
 
 @media screen and (max-width: 1199px) {
@@ -365,7 +391,7 @@
   }
 
   .container-shopping-card {
-    max-width: 909px;
+    max-width: 996px;
   }
   .conteiner-shopping-books {
     margin-left: 40px;
