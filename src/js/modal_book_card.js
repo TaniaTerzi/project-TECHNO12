@@ -10,6 +10,9 @@ const addbook = document.querySelector('.addbook');
 const backdrop = document.getElementById('backdrop');
 const closeModalBtn = document.querySelector('.modal-book-close');
 let idbook;
+let titleBook;
+let descrBook;
+// let addDesc;
 
 let storageBooks = JSON.parse(localStorage.getItem('bookInfo')) || []
 
@@ -24,6 +27,53 @@ async function getBooks(id) {
     backdrop.classList.add('backdrop_open');
     backdrop.classList.remove('visually-hidden');
     document.removeEventListener('click', onBookClick);
+
+    const colorTheme = localStorage.getItem('theme');
+    titleBook = document.querySelector('.book-title');
+    descrBook = document.querySelector('.book-descr');
+    // addDesc = document.querySelector('.add-book-info')
+
+    if (colorTheme === 'dark') {
+      modal.classList.remove('modal');
+      modal.classList.add('modal-dark');
+
+      addbook.classList.remove('addbook');
+      addbook.classList.add('addbook-dark');
+
+      titleBook.classList.remove('book-title');
+      titleBook.classList.add('book-title-dark');
+
+      descrBook.classList.remove('book-descr');
+      descrBook.classList.add('book-descr-dark');
+
+      // addDesc.classList.remove('add-book-info');
+      // addDesc.classList.add('add-book-info-dark');
+
+      closeModalBtn.classList.remove('modal-book-close');
+      closeModalBtn.classList.add('modal-book-close-dark');
+    } 
+    else if (colorTheme === 'light') {
+      modal.classList.remove('modal-dark');
+      modal.classList.add('modal');
+
+      addbook.classList.remove('addbook-dark');
+      addbook.classList.add('addbook');
+
+      titleBook.classList.remove('book-title-dark');
+      titleBook.classList.add('book-title');
+
+      descrBook.classList.remove('book-descr-dark');
+      descrBook.classList.add('book-descr');
+
+      // addDesc.classList.remove('add-book-info-dark');
+      // addDesc.classList.add('add-book-info');
+
+      closeModalBtn.classList.remove('modal-book-close-dark');
+      closeModalBtn.classList.add('modal-book-close');
+    }
+
+
+
     return response.data;
   } catch (error) {
     console.log(error);
