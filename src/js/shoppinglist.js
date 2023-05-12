@@ -149,10 +149,7 @@ function markupShoppingList(books) {
                 </ul>
               </div>
             </div>
-            <button type="button" id=${_id} class="shopping-card-dump-btn">
-              <svg class="shopping-card-dump-icon" width=18 height=18>
-                <use href="/src/images/svg/trash.svg"></use>
-              </svg>
+            <button type="button" id=${_id} class="shopping-card-dump-btn">              
             </button>
           </div>
     `, '');
