@@ -13,3 +13,7 @@ import { booksCard } from './js/modal_book_card.js';
 import { showLoadingIndicator } from './js/loader.js';
 import { createCategoryList } from './js/categories.js';
 import { initializeApp } from 'firebase/app';
+import { FirebaseApp } from 'firebase/app';
+
+
+
