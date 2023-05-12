@@ -1,8 +1,7 @@
 @media screen and (min-width: 1200px) {
   .support-slider-container {
     height: 490px;
-    position: sticky;
-    top: 72px;
+    
   }
   .sidebar {
     margin-right: 40px;
@@ -13,5 +12,10 @@
 
   .slider__next {
     bottom: 24px;
+  }
+
+.scs-sticky {
+  position: sticky;
+    top: 72px;
   }
 }
