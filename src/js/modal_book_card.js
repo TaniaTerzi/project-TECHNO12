@@ -12,7 +12,7 @@ const closeModalBtn = document.querySelector('.modal-book-close');
 let idbook;
 let titleBook;
 let descrBook;
-// let addDesc;
+let addDesc;
 
 let storageBooks = JSON.parse(localStorage.getItem('bookInfo')) || []
 
@@ -72,9 +72,6 @@ async function getBooks(id) {
       closeModalBtn.classList.add('modal-book-close');
     }
 
-
-
-    return response.data;
   } catch (error) {
     console.log(error);
   }
@@ -94,8 +91,7 @@ document.addEventListener('click', onBookClick);
 
 addbook.addEventListener('click', () => {
   changeBtn();
-  getBookinModal()
-  // addLocalStor();
+  getBookinModal();
 });
 
 async function getBookinModal(id) {
@@ -104,12 +100,7 @@ async function getBookinModal(id) {
     const id = idbook.textContent;
     const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
 
-    // idbook = document.querySelector('.idbook');
-    // const id2 = idbook.textContent;
-    // const bookInfo = localStorage.getItem('bookInfo');
-
     const bookInfo = JSON.parse(localStorage.getItem('bookInfo') || '[]');
-    // console.log(bookInfo);
 
        const index = bookInfo.findIndex(book => id === book._id);
       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
@@ -122,36 +113,15 @@ async function getBookinModal(id) {
         if (index !== -1)
           bookInfo.splice(index, 1)
         localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
-      }
+    }
 
-    // addbook.addEventListener('click', () => {
-   
-    //   const index = bookInfo.findIndex(book => id === book._id);
-    //   localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
-    // if (addbook.classList.contains('remove')) {
-    //     if (index === -1) {
-    //       bookInfo.push(response.data);
-    //       localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
-    //     }
-    //   } else if (addbook.classList.contains('add')) {
-    //     if (index !== -1)
-    //       bookInfo.splice(index, 1)
-    //     localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
-    //   }
-    // })
+      // addDesc = document.querySelector('.add-book-info');
+      // addDesc.classList.add('hidesecond');
   }
   catch (error) {
     console.log(error);
   };
 }
-
-
-// function addLocalStor() {
-//   idbook = document.querySelector('.idbook');
-//   const id = idbook.textContent;
-
-//   getBookinModal(id);
-// }
 
 function changeBtn() {
 
@@ -159,23 +129,33 @@ function changeBtn() {
     setTimeout(() => {
       addbook.textContent = 'remove from the shopping list';
     }, 150);
+
+    addDesc = document.querySelector('.add-book-info');
+
     addbook.classList.remove('add');
     addbook.classList.add('remove');
     addbook.classList.add('addbook-change-size');
     modal.classList.add('modal-change-size');
-    const text = document.createElement('p');
-    text.textContent =
-      'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-    text.classList.add('add-book-info');
-    modal.appendChild(text);
+
+    addDesc.classList.remove('hide');
+    addDesc.classList.remove('hidesecond');
+
+    // const text = document.createElement('p');
+    // text.textContent =
+      // 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+    // text.classList.add('add-book-info');
+    // modal.appendChild(text);
   } else if (addbook.textContent === 'remove from the shopping list') {
+    addDesc = document.querySelector('.add-book-info');
+
     addbook.textContent = 'add to shoping list';
     addbook.classList.add('add');
     addbook.classList.remove('remove');
     addbook.classList.remove('addbook-change-size');
     modal.classList.remove('modal-change-size');
-    const p = document.querySelector('.add-book-info');
-    p.remove();
+    // const p = document.querySelector('.add-book-info');
+    // p.remove();
+    addDesc.classList.add('hide')
   }
 }
 
@@ -186,8 +166,8 @@ closeModalBtn.addEventListener('click', () => {
   document.addEventListener('click', onBookClick);
   modalMarkup.innerHTML = '';
   addbook.textContent = 'add to shoping list';
-  const p = document.querySelector('.add-book-info');
-  p.remove();
+  // const p = document.querySelector('.add-book-info');
+  // p.remove();
   modal.classList.remove('modal-change-size');
 });
 
@@ -199,8 +179,8 @@ function closeModal(event) {
     document.addEventListener('click', onBookClick);
     modalMarkup.innerHTML = '';
     addbook.textContent = 'add to shoping list';
-    const p = document.querySelector('.add-book-info');
-    p.remove();
+    // const p = document.querySelector('.add-book-info');
+    // p.remove();
     modal.classList.remove('modal-change-size');
   }
 }
@@ -220,6 +200,7 @@ function booksCard(book) {
     <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[1].url}"><img src="${photoAppleBook}" width="32px" heigth="32px"/></a></li>
     <li class="online-shops-item"><a target="_blank" rel="noopener noreferrer" href="${book.buy_links[4].url}"><img src="${photoBlackBook}" width="38px" heigth="36px"/></a></li>    
     </ul>
+    <p class="add-book-info hidesecond">Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.</p>
     </div>`;
   return modalMarkup.insertAdjacentHTML('afterbegin', markup);
 }
