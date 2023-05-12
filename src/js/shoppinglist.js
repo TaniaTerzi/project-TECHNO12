@@ -53,14 +53,14 @@ function onPaginationBtn(e) {
     return;
   }
 
-  pb = document.querySelectorAll('.pagination-btn');
+  const pb = document.querySelectorAll('.pagination-btn');
   console.log(pb);
 
-  pb.forEach((item) => {
-    // pb[item].classList.add('pagination-active-button'); 
+  // pb.forEach((item) => {
+     // pb[item].classList.add('pagination-active-button'); 
     // console.log(`Category: ${item.firstElementChild.textContent}`);
     // console.log(`Elements: ${item.lastElementChild.childElementCount}`);  
-  });
+  // });
    
  
   console.dir(e.target.id);
@@ -70,7 +70,7 @@ function onPaginationBtn(e) {
 
 function renderShoppingList(books, page) {
   let quantityOfBooksPerPage = 0;
-  let currentPage = page;
+  const currentPage = page;
   let offset = 0;
 
   let quantityOfButtons = 0;
