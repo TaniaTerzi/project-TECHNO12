@@ -40,7 +40,7 @@ function onDumpBtn(e) {
   books = filteredBooks;
 
   if (books.length !== 0) {
-    renderShoppingList(books);
+    renderShoppingList(books,1);
   }
   else {
     renderEmpty();
@@ -60,8 +60,7 @@ function onPaginationBtn(e) {
 
 }
 
-
-function renderShoppingList(books,page) {
+function renderShoppingList(books, page) {
   let quantityOfBooksPerPage = 0;
   currentPage = page;
   let offset = 0;
@@ -101,16 +100,6 @@ function renderShoppingList(books,page) {
 function renderEmpty() {
   shoppingListContainerRef.innerHTML = '';
   shoppingListContainerRef.innerHTML = markupEmpty();
-}
-
-function markupPagination(quantityOfButtons) {
-  let acc = '';
-  for (let i = 1; i <= quantityOfButtons; i += 1) {
-    acc += `
-      <button type="button" id=${i} class="pagination-btn">${i}</button>    
-    `;
-  }
-  return acc;
 }
 
 function markupShoppingList(books) {
@@ -171,6 +160,16 @@ function markupShoppingList(books) {
           src="${photoBooksx1} alt="books" />
       </div>
     `;
+}
+
+function markupPagination(quantityOfButtons) {
+  let acc = '';
+  for (let i = 1; i <= quantityOfButtons; i += 1) {
+    acc += `
+      <button type="button" id=${i} class="pagination-btn">${i}</button>    
+    `;
+  }
+  return acc;
 }
 
 // ================ END OF - SEE MORE BTN ==================
