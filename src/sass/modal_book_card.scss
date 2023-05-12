@@ -75,6 +75,14 @@
     border: none;
     cursor: pointer;
 }
+.hide { 
+    display: none;
+}
+.hidesecond {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+}
 
 .addbook {
     position: absolute;
