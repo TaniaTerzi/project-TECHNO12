@@ -12,6 +12,8 @@ closeMenuBtn.addEventListener('click', () => {
   console.log('slkdj');
 });
 
+
+
 // const toggleMenu = () => {
 //   const isMenuOpen =
 //     openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
