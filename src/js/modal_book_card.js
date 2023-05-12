@@ -94,23 +94,24 @@ document.addEventListener('click', onBookClick);
 
 addbook.addEventListener('click', () => {
   changeBtn();
-  addLocalStor();
+  getBookinModal()
+  // addLocalStor();
 });
 
 async function getBookinModal(id) {
   try {
+    idbook = document.querySelector('.idbook');
+    const id = idbook.textContent;
     const response = await axios.get(`https://books-backend.p.goit.global/books/${id}`);
 
-    idbook = document.querySelector('.idbook');
-    const id2 = idbook.textContent;
+    // idbook = document.querySelector('.idbook');
+    // const id2 = idbook.textContent;
     // const bookInfo = localStorage.getItem('bookInfo');
 
     const bookInfo = JSON.parse(localStorage.getItem('bookInfo') || '[]');
     // console.log(bookInfo);
 
-    addbook.addEventListener('click', () => {
-   
-      const index = bookInfo.findIndex(book => id === book._id);
+       const index = bookInfo.findIndex(book => id === book._id);
       localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
     if (addbook.classList.contains('remove')) {
         if (index === -1) {
@@ -122,7 +123,22 @@ async function getBookinModal(id) {
           bookInfo.splice(index, 1)
         localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
       }
-    })
+
+    // addbook.addEventListener('click', () => {
+   
+    //   const index = bookInfo.findIndex(book => id === book._id);
+    //   localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+    // if (addbook.classList.contains('remove')) {
+    //     if (index === -1) {
+    //       bookInfo.push(response.data);
+    //       localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
+    //     }
+    //   } else if (addbook.classList.contains('add')) {
+    //     if (index !== -1)
+    //       bookInfo.splice(index, 1)
+    //     localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
+    //   }
+    // })
   }
   catch (error) {
     console.log(error);
@@ -130,12 +146,12 @@ async function getBookinModal(id) {
 }
 
 
-function addLocalStor() {
-  idbook = document.querySelector('.idbook');
-  const id = idbook.textContent;
+// function addLocalStor() {
+//   idbook = document.querySelector('.idbook');
+//   const id = idbook.textContent;
 
-  getBookinModal(id);
-}
+//   getBookinModal(id);
+// }
 
 function changeBtn() {
 
