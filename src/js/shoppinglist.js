@@ -61,9 +61,9 @@ function renderShoppingList(books) {
     quantityOfBooksPerPage = 4;
   }
   
-  offset = currentPage * quantityOfBooksPerPage;
+  offset = (currentPage - 1) * quantityOfBooksPerPage;
 
-  quantityOfButtons = books.length / quantityOfBooksPerPage;
+  quantityOfButtons = Math.ceil(books.length / quantityOfBooksPerPage);
 
   console.log(books);
   console.log(offset);
@@ -73,7 +73,9 @@ function renderShoppingList(books) {
   shoppingListContainerRef.innerHTML = '';
   shoppingListContainerRef.innerHTML = markupShoppingList(books.slice(offset, offset + quantityOfBooksPerPage));
   paginationContainerRef.innerHTML = '';
-  paginationContainerRef.innerHTML = markupPagination(quantityOfButtons);
+  if (quantityOfButtons > 1) {
+      paginationContainerRef.innerHTML = markupPagination(quantityOfButtons);
+  } 
   shoppingListDumpBtnRef = document.querySelector('.container-markup');
   shoppingListDumpBtnRef.addEventListener('click', onDumpBtn);
 }
@@ -87,7 +89,7 @@ function markupPagination(quantityOfButtons) {
   let acc = '';
   for (let i = 1; i <= quantityOfButtons; i += 1) {
     acc += `
-      <button type="button" class="pagination-button">${i}</button>    
+      <button type="button" id=${i} class="pagination-btn">${i}</button>    
     `;
   }
   return acc;

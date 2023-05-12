@@ -1,4 +1,6 @@
 export const slider = document.querySelector('.slider');
+export const openMenuBtn = document.querySelector('.menu-hamburger');
+export const closeMenuBtn = document.querySelector('.js-close-menu');
 slider.addEventListener('click', e => {
   e.preventDefault();
   slider.classList.toggle('active');
@@ -12,8 +14,12 @@ toggleSwitch.addEventListener('click', e => {
 
   if (document.body.classList.contains('dark-mode')) {
     localStorage.setItem('theme', 'dark');
+    openMenuBtn.style.stroke = 'white';
+    closeMenuBtn.style.stroke = 'white';
   } else {
     localStorage.setItem('theme', 'light');
+    openMenuBtn.style.stroke = 'black';
+    closeMenuBtn.style.stroke = 'black';
   }
 });
 
