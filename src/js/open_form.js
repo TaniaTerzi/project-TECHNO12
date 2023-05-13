@@ -1,96 +1,31 @@
-
-
 const backdrop = document.querySelector('.reg-modal-backdrop');
 const closeButton = document.querySelector('.reg-close-button');
 const openButton = document.querySelector('#header-signup-link');
-const registrationForm = document.getElementById('myForm');
 const form = document.querySelector('.reg-form-register');
-const emailInput = form.querySelector('input[name="email"]');
-const passwordInput = form.querySelector('input[name="password"]');
-const signInBtn = form.querySelector('#login');
-const signUpBtn = form.querySelector('#register');
+const signUpBtn = form.querySelector('#sign_up');
+const signInBtn = form.querySelector('#sign_in');
+const linkUp = form.querySelector('.reg-signup-btn');
+const linkIn = form.querySelector('.reg-signin-btn');
 
-function openForm() {
-  backdrop.classList.remove('visually-hidden');
-  signInBtn.style.display = 'none';
+
+const showModal = () => {
+	backdrop.classList.toggle('visually-hidden');
+	signInBtn.style.display = 'none';
 }
-function closeForm() {
-  backdrop.classList.toggle('visually-hidden');
-}
-backdrop.addEventListener('click', function (event) {
-  if (event.target === backdrop) {
-    closeForm();
-  }
-});
+openButton.addEventListener('click', showModal);
+closeButton.addEventListener('click', showModal);
 
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') {
-    closeForm();
-    return;
-  }
-});
 
-// Функція для переключення форми між SIGN IN та SIGN UP
-function toggleForm(action) {
-  if (action === 'login') {
-    signUpBtn.style.display = 'inline-block';
-    signInBtn.style.display = 'none';
-    form.setAttribute('action', 'signInWithEmailPassword()'); // Firebase функція для входу
-  } else if (action === 'register') {
-    signInBtn.style.display = 'inline-block';
-    signUpBtn.style.display = 'none';
-    form.setAttribute('action', 'createUserWithEmailPassword()'); // Firebase функція для реєстрації
-  }
-}
-// Функція для входу
-function signIn() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then(userCredential => {
-      // Залогінено користувача
-      form.reset();
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-    });
-}
-// Функція для реєстрації
-function signUp() {
-  const email = emailInput.value;
-  const password = passwordInput.value;
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(userCredential => {
-      // Користувач створено успішно
-      form.reset();
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-    });
-}
-// обробник подій для посилань SIGN IN та SIGN UP
-const signUpLink = form.querySelector('.reg-signup-btn');
-const signInLink = form.querySelector('.reg-signin-btn');
+// Зміна відображення кнопок 
+const toogleClassBtnLinkUp = () => {
+	signUpBtn.style.display = 'block';
+	signInBtn.style.display = 'none';
+};
+const toogleClassBtnLinkIn = () => {
+	signUpBtn.style.display = 'none';
+	signInBtn.style.display = 'block';
+};
 
-signUpLink.addEventListener('click', event => {
-  event.preventDefault();
-  toggleForm('register');
-});
+linkUp.addEventListener('click', toogleClassBtnLinkUp);
+linkIn.addEventListener('click', toogleClassBtnLinkIn);
 
-signInLink.addEventListener('click', event => {
-  event.preventDefault();
-  toggleForm('login');
-});
-
-closeButton.addEventListener('click', closeForm);
-openButton.addEventListener('click', openForm);
-
-export { signIn, signUp };

@@ -102,7 +102,9 @@
   width: auto;
   height: 100%;
 
-  background: var(--text-color);
+  background-color: var(--text-color);
+  border: 2px solid;
+  border-color: var(--text-color);
   border-radius: 40px;
 
   font-weight: 700;
@@ -113,7 +115,16 @@
   text-transform: uppercase;
 
   color: var(--header-color);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.btn-queue-modal:hover,
+.btn-queue-modal:focus {
+  background-color: var(--yellow-color);
+  color: var(--text-color);
+}
+
+
 
 .register-links {
   text-decoration: none;
@@ -134,6 +145,7 @@
   text-transform: uppercase;
   color: var(--sing-btn);
 }
+
 .reg-signin-btn:hover,
 .reg-signin-btn:focus,
 .reg-signin-btn:active {
@@ -182,3 +194,4 @@
   background-color: rgba(46, 47, 66, 0.4);
   z-index: 990;
 }
+

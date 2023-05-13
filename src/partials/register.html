@@ -11,48 +11,32 @@
         type="text"
         placeholder="NAME"
         name="name"
-        pattern="[a-zA-Z]+"
-        required
       />
       <input
         class="reg-input-forms"
         type="email"
         placeholder="EMAIL"
         name="email"
-        required
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
       />
       <input
         class="reg-input-forms"
         type="password"
         placeholder="PASSWORD"
         name="password"
-        required
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
       />
+      <button class="btn-queue-modal btn" id="sign_up" type="button">
+        SIGN UP
+      </button>
       <button
-        class="btn-queue-modal btn"
-        id="login"
+        class="btn-queue-modal btn "
+        id="sign_in"
         type="button"
-        onclick="signIn()"
       >
         SIGN IN
       </button>
-      <button
-        class="btn-queue-modal btn"
-        id="register"
-        type="button"
-        onclick="signUp()"
-      >
-        SIGN UP
-      </button>
-      <div class="register-links">
-        <a class="reg-signup-btn" href="#" onclick="toggleForm('register')"
-          >SIGN IN</a
-        >
-        <a class="reg-signin-btn" href="#" onclick="toggleForm('login')"
-          >SIGN UP</a
-        >
+      <div class="register-links ">
+        <a class="reg-signup-btn" href="#">SIGN UP</a>
+        <a class="reg-signin-btn" href="#">SIGN IN</a>
       </div>
     </form>
   </div>
