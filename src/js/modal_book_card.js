@@ -31,7 +31,6 @@ async function getBooks(id) {
     const colorTheme = localStorage.getItem('theme');
     titleBook = document.querySelector('.book-title');
     descrBook = document.querySelector('.book-descr');
-    // addDesc = document.querySelector('.add-book-info')
 
     if (colorTheme === 'dark') {
       modal.classList.remove('modal');
@@ -45,9 +44,6 @@ async function getBooks(id) {
 
       descrBook.classList.remove('book-descr');
       descrBook.classList.add('book-descr-dark');
-
-      // addDesc.classList.remove('add-book-info');
-      // addDesc.classList.add('add-book-info-dark');
 
       closeModalBtn.classList.remove('modal-book-close');
       closeModalBtn.classList.add('modal-book-close-dark');
@@ -65,8 +61,6 @@ async function getBooks(id) {
       descrBook.classList.remove('book-descr-dark');
       descrBook.classList.add('book-descr');
 
-      // addDesc.classList.remove('add-book-info-dark');
-      // addDesc.classList.add('add-book-info');
 
       closeModalBtn.classList.remove('modal-book-close-dark');
       closeModalBtn.classList.add('modal-book-close');
@@ -115,8 +109,6 @@ async function getBookinModal(id) {
         localStorage.setItem('bookInfo', JSON.stringify(bookInfo))
     }
 
-      // addDesc = document.querySelector('.add-book-info');
-      // addDesc.classList.add('hidesecond');
   }
   catch (error) {
     console.log(error);
@@ -140,11 +132,6 @@ function changeBtn() {
     addDesc.classList.remove('hide');
     addDesc.classList.remove('hidesecond');
 
-    // const text = document.createElement('p');
-    // text.textContent =
-      // 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-    // text.classList.add('add-book-info');
-    // modal.appendChild(text);
   } else if (addbook.textContent === 'remove from the shopping list') {
     addDesc = document.querySelector('.add-book-info');
 
@@ -153,8 +140,6 @@ function changeBtn() {
     addbook.classList.remove('remove');
     addbook.classList.remove('addbook-change-size');
     modal.classList.remove('modal-change-size');
-    // const p = document.querySelector('.add-book-info');
-    // p.remove();
     addDesc.classList.add('hide')
   }
 }
@@ -166,8 +151,6 @@ closeModalBtn.addEventListener('click', () => {
   document.addEventListener('click', onBookClick);
   modalMarkup.innerHTML = '';
   addbook.textContent = 'add to shoping list';
-  // const p = document.querySelector('.add-book-info');
-  // p.remove();
   modal.classList.remove('modal-change-size');
 });
 
@@ -179,8 +162,6 @@ function closeModal(event) {
     document.addEventListener('click', onBookClick);
     modalMarkup.innerHTML = '';
     addbook.textContent = 'add to shoping list';
-    // const p = document.querySelector('.add-book-info');
-    // p.remove();
     modal.classList.remove('modal-change-size');
   }
 }
