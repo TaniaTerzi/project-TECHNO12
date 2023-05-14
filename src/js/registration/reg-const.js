@@ -1,0 +1,12 @@
+export const backdrop = document.querySelector('.reg-modal-backdrop');
+export const closeButton = document.querySelector('.reg-close-button');
+export const openButton = document.querySelector('#header-signup-link');
+export const form = document.querySelector('.reg-form-register');
+export const emailInput = form.querySelector('.reg-email');
+export const passwordInput = form.querySelector('.reg-password');
+export const signUpBtn = form.querySelector('#sign_up');
+export const signInBtn = form.querySelector('#sign_in');
+export const linkUp = form.querySelector('.reg-signup-btn');
+export const linkIn = form.querySelector('.reg-signin-btn');
+export const btn = form.querySelector('.btn');
+export const nameInput = form.querySelector('.reg-name');

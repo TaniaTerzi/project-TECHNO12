@@ -1,23 +1,43 @@
 :root {
-  --bg-color: #F6F6F6;
-	--header-color: #ffffff;
+  --bg-color: #f6f6f6;
+  --header-color: #ffffff;
   --text-color: #111111;
-	--slider-color: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --slider-color: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   --second-text-color: #11111199;
   --blue-color: #4f2ee8;
   --yellow-color: #eac645;
-  --bg-shoppinglist: #D0D0D0;
-	--category: #4f2ee8;
-		--sing-btn: #11111180;
-}
+  --bg-shoppinglist: #d0d0d0;
+  --category: #4f2ee8;
+  --sing-btn: #11111180;
+  .close-btn {
+    background-image: url('../images/svg/x_button_black.svg');
+  }
+  .email-img {
+    background-image: url('../images/svg/email.black.svg');
+  }
+  .password-img {
+    background-image: url('../images/svg/password_black.svg');
+  }
+  .red_border {
+    border-color: red;
+  }
 
-.dark-mode {
-	--sing-btn:  #ffffff99;
-	--category: #eac645;
-  --bg-color: #202024;
-	--header-color: #111111;
-  --text-color: #ffffff;
-  --second-text-color: #ffffff99;
-	--slider-color: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  .dark-mode {
+    --sing-btn: #ffffff99;
+    --category: #eac645;
+    --bg-color: #202024;
+    --header-color: #111111;
+    --text-color: #ffffff;
+    --second-text-color: #ffffff99;
+    --slider-color: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+    .close-btn {
+      background-image: url('../images/svg/x-button_white.svg');
+    }
+    .email-img {
+      background-image: url('../images/svg/email_white.svg');
+    }
+    .password-img {
+      background-image: url('../images/svg/password_white.svg');
+    }
+  }
 }
-
