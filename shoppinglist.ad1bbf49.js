@@ -1,0 +1,2 @@
+!function(){var n=document.getElementById("conditions"),e=document.getElementById("conditions-link"),t=document.querySelector(".close");e.addEventListener("click",(function(){n.style.display="block"})),t.addEventListener("click",(function(){n.style.display="none"})),window.addEventListener("click",(function(e){e.target==n&&(n.style.display="none")}))}();
+//# sourceMappingURL=shoppinglist.ad1bbf49.js.map
