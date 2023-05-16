@@ -1,3 +1,5 @@
+
+
 <div class="reg-modal-backdrop visually-hidden">
   <div class="reg-form-popup" id="myForm">
     <form class="reg-form-register">
@@ -10,40 +12,48 @@
         class="reg-input-forms reg-name user-img"
         type="text"
         placeholder="NAME"
-				title="enter your name"
+        title="enter your name"
         name="name"
       />
-						<!-- <small>format: user@domain.com</small> -->
       <input
         class="reg-input-forms reg-email email-img"
         type="email"
         placeholder="EMAIL"
         name="email"
-				title="example@gmail.com"
-				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+        title="example@gmail.com"
       />
-			
+
       <input
         class="reg-input-forms reg-password password-img"
         type="password"
         placeholder="PASSWORD"
         name="password"
-				title="Minimum 6 characters"
+        title="Minimum 6 characters"
       />
-      <button class="btn-queue-modal btn " id="sign_up" type="button">
+      <button class="btn-queue-modal btn" id="sign_up" type="button">
         SIGN UP
       </button>
-      <button
-        class="btn-queue-modal btn "
-        id="sign_in"
-        type="button"
-      >
+      <button class="btn-queue-modal btn" id="sign_in" type="button">
         SIGN IN
       </button>
-      <div class="register-links ">
+						<div class="reg-i-gree">
+      <input class="reg-checkbox" type="checkbox" id="sign-up-checkbox"/>
+      <label class="reg-checkbox-custom" for="sign-up-checkbox"></label>
+      <a class="reg-checkbox-label" id="conditions-link" href="#conditions">I agree to the terms and conditions
+				 
+			</a>
+	
+			</div>
+				
+      <div class="register-links">
         <a class="reg-signup-btn" href="#">SIGN UP</a>
         <a class="reg-signin-btn" href="#">SIGN IN</a>
       </div>
+			
     </form>
+
   </div>
+				   <include src="./partials/conditions.html"></include>
 </div>
+
+

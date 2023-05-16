@@ -13,6 +13,8 @@ import {
   linkUp,
   linkIn,
   nameInput,
+  signUpCheckbox,
+  signUpButton,
 } from './registration/reg-const';
 
 const firebaseConfig = {
@@ -24,10 +26,6 @@ apiKey: "AIzaSyDMnXjhWjIMeE1EJ6KOnyUAYjgWeRJevIU",
   appId: "1:353320685234:web:1ac20ad763e02539e643ab",
   measurementId: "G-P3W3NGWD78"
 };
-
-
-
-
 
 const showModal = () => {
   backdrop.classList.toggle('visually-hidden');

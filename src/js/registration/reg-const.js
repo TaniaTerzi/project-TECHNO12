@@ -10,3 +10,5 @@ export const linkUp = form.querySelector('.reg-signup-btn');
 export const linkIn = form.querySelector('.reg-signin-btn');
 export const btn = form.querySelector('.btn');
 export const nameInput = form.querySelector('.reg-name');
+export const signUpCheckbox = document.getElementById('sign-up-checkbox');
+export const signUpButton = document.getElementById('sign_up');
