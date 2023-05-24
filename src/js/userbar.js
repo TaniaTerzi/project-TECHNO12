@@ -1,5 +1,5 @@
-export const userLogout = document.querySelector('.logout');
-export const userLogin = document.querySelector('.logged-user');
+import { userLogout, userLogin, logOutBtn } from './registration/reg-const';
+
 userLogin.addEventListener('click', e => {
   userLogout.classList.remove('visually-hidden');
 });

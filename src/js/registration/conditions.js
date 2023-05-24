@@ -1,6 +1,4 @@
-var licenseModal = document.getElementById('conditions');
-var licenseLink = document.getElementById('conditions-link');
-var closeBtn = document.querySelector('.close');
+import { licenseModal, licenseLink, closeBtn } from './reg-const';
 
 licenseLink.addEventListener('click', function () {
   licenseModal.style.display = 'block';
@@ -12,6 +10,6 @@ closeBtn.addEventListener('click', function () {
 
 window.addEventListener('click', function (event) {
   if (event.target == licenseModal) {
-		licenseModal.style.display = 'none';
+    licenseModal.style.display = 'none';
   }
 });
