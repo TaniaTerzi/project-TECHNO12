@@ -7,11 +7,21 @@
 }
 
 .logo-img {
-  width: 109px;
-  // margin-right: 8px;
+  width: 28px;
+  margin-right: 8px;
 }
 
+.logo-name {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: var(--text-color);
+}
 .container-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
   background-color: var(--header-color);
   max-width: 1440px;
   height: 72px;
@@ -31,7 +41,7 @@
   margin-right: 24px;
   border-radius: 15px;
   background: var(--slider-color);
-  box-shadow: 0 0 0.3em 0.1em  var(--header-color);
+  box-shadow: 0 0 0.3em 0.1em var(--header-color);
   cursor: pointer;
 }
 
