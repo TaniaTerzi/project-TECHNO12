@@ -37,7 +37,7 @@ function scrollToTop() {
 window.addEventListener('keypress', onKeyPress);
 
 function onKeyPress(event) {
-  console.log(event);
+  // console.log(event);
   allowScroll = false;
 }
 
